@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import Photo from "@/components/Photo";
-import { volunteerRoles, heroPhotos } from "@/lib/data";
+import { volunteerRoles, heroPhotos, visitPhoto } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Volunteer | Wiamoase Diaspora Public Library",
@@ -16,25 +17,19 @@ export default function VolunteerPage() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Volunteer</span>
           </nav>
-          <h1>Two hours a week is genuinely enough.</h1>
-          <p className="lead muted">
-            The clubs run because members abroad and in the town give a couple of hours each week. You do not need to
-            be a qualified teacher — you need to be willing to show up.
-          </p>
-        </div>
-      </section>
+        }
+        title="Two hours a week is genuinely enough."
+        lead="The clubs run because members abroad and in the town give a couple of hours each week. You do not need to be a qualified teacher — you need to be willing to show up."
+        image={visitPhoto}
+        priority
+      />
 
       <section className="section-tight">
         <div className="container">
@@ -134,8 +129,12 @@ export default function VolunteerPage() {
                   Book and equipment drives
                 </li>
               </ul>
-              <a className="btn btn-lg" href="/?topic=Volunteering#visit">
-                Register interest
+              <a
+                className="btn btn-lg"
+                href="/?topic=Volunteering#visit"
+                data-dialog="volunteer"
+              >
+                Become a Volunteer
               </a>
             </div>
           </div>

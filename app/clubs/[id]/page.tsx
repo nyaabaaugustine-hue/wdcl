@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CopyLink from "@/components/CopyLink";
 import Icon from "@/components/Icon";
+import ClubIcon from "@/components/ClubIcon";
 import Photo from "@/components/Photo";
+import PageHero from "@/components/PageHero";
 import { clubs, stemLab } from "@/lib/data";
 
 const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
@@ -38,25 +40,23 @@ export default async function ClubPage({ params }: Params) {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow" aria-label="Breadcrumb">
             <Link href="/">Home</Link> <span aria-hidden="true">/</span>{" "}
             <Link href="/clubs">Clubs</Link> <span aria-hidden="true">/</span> {club.label}
           </nav>
-          <h1>{club.title}</h1>
-          <p className="lead muted">{club.blurb}</p>
-          <div className="page-hero-badges">
-            <span className="badge badge-brand">{club.badge}</span>
-            {club.supporter ? <span className="badge badge-secondary">{club.supporter}</span> : null}
-          </div>
+        }
+        title={club.title}
+        lead={club.blurb}
+        image={club.image}
+        priority
+      >
+        <div className="page-hero-badges">
+          <span className="badge badge-brand">{club.badge}</span>
+          {club.supporter ? <span className="badge badge-secondary">{club.supporter}</span> : null}
         </div>
-      </section>
+      </PageHero>
 
       <section className="section-tight">
         <div className="container">
@@ -181,7 +181,7 @@ export default async function ClubPage({ params }: Params) {
               <article className="club-card" key={c.id}>
                 <div className="club-card-top">
                   <span className="icon-box" aria-hidden="true">
-                    <Icon name={c.icon} />
+                    <ClubIcon club={c} size={20} />
                   </span>
                   <span className="badge badge-secondary">{c.ageGroup}</span>
                 </div>

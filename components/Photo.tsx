@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-type Ratio = "4-3" | "3-2" | "1-1" | "16-9" | "16-10";
+type Ratio = "4-3" | "3-2" | "1-1" | "16-9" | "16-10" | "16-7" | "4-5";
 
 type Props = {
   src: string;

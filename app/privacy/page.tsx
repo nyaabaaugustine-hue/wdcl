@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FACEBOOK_URL } from "@/lib/data";
+import { FACEBOOK_URL, photo } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Privacy | Wiamoase Diaspora Public Library",
@@ -59,25 +60,19 @@ const slug = (s: string) =>
 export default function PrivacyPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Privacy</span>
           </nav>
-          <h1>What we do with your information.</h1>
-          <p className="lead muted">
-            A plain-language summary. This is a community library website, not a commercial service, and we collect as
-            little as possible.
-          </p>
-        </div>
-      </section>
+        }
+        title="What we do with your information."
+        lead="A plain-language summary. This is a community library website, not a commercial service, and we collect as little as possible."
+        image={photo("photo-1481627834876-b7833e8f5570", 1600)}
+        priority
+      />
 
       <section className="section-tight">
         <div className="container">

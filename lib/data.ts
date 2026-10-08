@@ -1,20 +1,54 @@
 export const FACEBOOK_URL =
   "https://www.facebook.com/people/Wiamoase-Diaspora-Public-Library/100086561113171/";
 export const MAP_URL = "https://www.google.com/maps?q=7.067,-1.533";
+export const ADDRESS =
+  "Agona Wiamoase, Sekyere South District, Ashanti Region, Ghana";
+export const PLUS_CODE = "3F3J+2M2, Wiamoase";
 
-export const navLinks = [
+export type NavLink = {
+  label: string;
+  href?: string;
+  children?: { label: string; href: string }[];
+};
+
+export const navLinks: NavLink[] = [
+  { href: "/", label: "Home" },
+  {
+    label: "About",
+    children: [
+      { label: "About us", href: "/about" },
+      { label: "Our story", href: "/#story" },
+      { label: "Facilities", href: "/#facilities" },
+    ],
+  },
+  {
+    label: "Explore",
+    children: [
+      { label: "Our Programs", href: "/programs" },
+      { label: "Clubs", href: "/clubs" },
+      { label: "Gallery", href: "/gallery" },
+    ],
+  },
+  {
+    label: "Get involved",
+    children: [
+      { label: "Sponsors", href: "/sponsors" },
+      { label: "Partners", href: "/partners" },
+      { label: "Volunteer", href: "/volunteer" },
+    ],
+  },
   { href: "/news", label: "News" },
-  { href: "/clubs", label: "Clubs" },
-  { href: "/#facilities", label: "Facilities" },
-  { href: "/sponsors", label: "Sponsors" },
-  { href: "/partners", label: "Partners" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/#visit", label: "Visit" },
+  { href: "/contact", label: "Contact" },
+  { href: "/visit", label: "Visit" },
 ];
 
+/** Hero photograph of the centre — shared by the Visit page and the Contact backdrop. */
+export const visitPhoto =
+  "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791290476/540452100_761460213416009_8447312575741898348_n_yo9ddu.jpg";
+
 /** Centralised photography source so every image can be swapped in one place. */
-const photo = (id: string, width: number) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=70`;
+export const photo = (id: string, width: number) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`;
 
 export const heroPhotos = [
   {
@@ -50,6 +84,13 @@ export const heroBackdrop = {
   alt: "Library interior with warm hanging lights over the stacks",
 } as const;
 
+/** Decorative crossfading background behind the hero copy. Swap for
+ *  /media/hero-bg-*.jpg once the assets folder is renamed by slot. */
+export const heroBackdropSlides: string[] = [
+  heroBackdrop.full,
+  ...heroPhotos.map((p) => p.full),
+];
+
 export const stats = [
   { value: "~$500K", label: "Raised by diaspora citizens", href: "#story" },
   { value: "2022", label: "Learning Centre inaugurated", href: "#story" },
@@ -73,7 +114,7 @@ export const facilities = [
     icon: "book",
     title: "Community Library",
     text: "A stocked public library with offices, serving students, teachers and residents of Wiamoase and nearby towns.",
-    image: photo("photo-1507842217343-583bb7270b66", 700),
+    image: photo("photo-1507842217343-583bb7270b66", 640),
     imageAlt: "Shelves of books in the community library",
     href: "/#overview",
   },
@@ -81,7 +122,7 @@ export const facilities = [
     icon: "robot",
     title: "Robotics & ICT Centre",
     text: "Robotics kits, laptops, desktop computers and AI tools for STEM education, commissioned 26 November 2024.",
-    image: photo("photo-1485827404703-89b55fcc595e", 700),
+    image: photo("photo-1485827404703-89b55fcc595e", 640),
     imageAlt: "Robotics kit on a workbench in the ICT Centre",
     href: "/clubs/robotics",
   },
@@ -89,9 +130,17 @@ export const facilities = [
     icon: "users",
     title: "Conference Centre",
     text: "A furnished hall for meetings, workshops and community events. It is also a source of income to maintain the centre.",
-    image: photo("photo-1509062522246-3755977927d7", 700),
+    image: photo("photo-1509062522246-3755977927d7", 640),
     imageAlt: "Seated hall set up for a community workshop",
     href: "/#visit",
+  },
+  {
+    icon: "grad",
+    title: "After-Class Studies & Tutorials",
+    text: "Supervised after-school sessions for homework, revision and small-group tuition, making full use of the library's books and computers.",
+    image: photo("photo-1503676260728-1c00da094a0b", 640),
+    imageAlt: "Students studying together around a table",
+    href: "/programs",
   },
 ] as const;
 
@@ -117,6 +166,8 @@ export type Club = {
   imageAlt: string;
   /** Named supporter, where one is publicly documented. */
   supporter?: string;
+  /** Custom icon image replacing the default SVG for this club. */
+  iconImg?: string;
 };
 
 export const clubs: Club[] = [
@@ -185,6 +236,7 @@ export const clubs: Club[] = [
     image: photo("photo-1485827404703-89b55fcc595e", 1200),
     imageAlt: "A humanoid robot on a workbench in the Robotics and ICT Centre",
     supporter: "Equipment funded by the MTN Ghana Foundation",
+    iconImg: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791283746/jhh_labq8g.png",
     programmes: [
       { title: "Robot Basics", desc: "Circuits, motors and sensors with starter kits. Wednesdays." },
       { title: "Arduino Lab", desc: "Line-following and obstacle-avoiding bots. Fridays." },
@@ -321,6 +373,7 @@ export type Sponsor = {
   name: string;
   role: string;
   note?: string;
+  logo?: string;
   /** false = placeholder awaiting confirmation from the library team */
   confirmed: boolean;
 };
@@ -347,6 +400,7 @@ export const sponsorTiers: SponsorTier[] = [
         name: "Wiamoase Citizens in the Diaspora",
         role: "Founding collective",
         note: "About US$500,000 raised through members' voluntary contributions.",
+        logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791294178/wddddd_kmajrd.png",
         confirmed: true,
       },
     ],
@@ -360,12 +414,14 @@ export const sponsorTiers: SponsorTier[] = [
         name: "MTN Ghana Foundation",
         role: "Robotics & ICT Centre",
         note: "Equipped the ICT centre as part of its STEM initiative, commissioned 26 November 2024.",
+        logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791279018/Scholarship-MTN-foundation_qkjuli.jpg",
         confirmed: true,
       },
       {
         name: "Ghana Library Authority",
         role: "Host branch",
         note: "The library operates as a branch of the Ghana Library Authority.",
+        logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791294071/libry_authority_kb8up5.jpg",
         confirmed: true,
       },
     ],
@@ -395,6 +451,7 @@ export type Partner = {
   name: string;
   kind: string;
   role: string;
+  logo: string;
 };
 
 export const partners: Partner[] = [
@@ -402,16 +459,19 @@ export const partners: Partner[] = [
     name: "MTN Ghana Foundation",
     kind: "Foundation",
     role: "Funded and equipped the Robotics & ICT Centre under its STEM initiative in the Ashanti Region.",
+    logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791279018/Scholarship-MTN-foundation_qkjuli.jpg",
   },
   {
     name: "Ghana Library Authority",
     kind: "Government",
     role: "Host branch providing affiliation, library standards and oversight.",
+    logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791294071/libry_authority_kb8up5.jpg",
   },
   {
     name: "Wiamoase Citizens in the Diaspora",
     kind: "Community",
     role: "Founding body, fundraising and ongoing programme support from abroad.",
+    logo: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791294178/wddddd_kmajrd.png",
   },
 ];
 

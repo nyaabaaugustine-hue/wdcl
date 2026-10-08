@@ -1,20 +1,9 @@
-import Image from "next/image";
-import HeroSlider from "./HeroSlider";
-import { heroBackdrop, stats } from "@/lib/data";
+import HeroBackdrop from "./HeroBackdrop";
 
 export default function Hero() {
   return (
     <section className="hero">
-      <Image
-        className="hero-bg"
-        src={heroBackdrop.full}
-        alt=""
-        aria-hidden="true"
-        fill
-        sizes="100vw"
-        loading="eager"
-        fetchPriority="low"
-      />
+      <HeroBackdrop />
       <div className="hero-scrim" aria-hidden="true" />
       <div className="container">
         <div className="kente-inline" aria-hidden="true">
@@ -40,16 +29,6 @@ export default function Hero() {
             Explore the clubs
           </a>
         </div>
-        <div className="stats">
-          {stats.map((s) => (
-            <a className="stat" href={s.href} key={s.label}>
-              <b>{s.value}</b>
-              <span>{s.label}</span>
-            </a>
-          ))}
-        </div>
-
-        <HeroSlider />
       </div>
     </section>
   );

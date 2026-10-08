@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Icon from "@/components/Icon";
 import Photo from "@/components/Photo";
-import { partners, partnerWays, storyPhoto } from "@/lib/data";
+import { partners, partnerWays, storyPhoto, photo } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Partners | Wiamoase Diaspora Public Library",
@@ -13,34 +15,33 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Partnerships</span>
           </nav>
-          <h1>Built with, not just funded by.</h1>
-          <p className="lead muted">
-            The centre is held up by three kinds of relationship: the diaspora body that raised the capital, the
-            national body that hosts the branch, and the foundation that equipped the ICT centre.
-          </p>
-        </div>
-      </section>
+        }
+        title="Built with, not just funded by."
+        lead="The centre is held up by three kinds of relationship: the diaspora body that raised the capital, the national body that hosts the branch, and the foundation that equipped the ICT centre."
+        image={photo("photo-1519389950473-47ba0277781c", 1600)}
+        priority
+      />
 
       <section className="section-tight">
         <div className="container">
           <div className="partner-grid">
             {partners.map((p) => (
               <article className="partner" key={p.name}>
-                <span className="supporter-mark mark-programme" aria-hidden="true">
-                  <Icon name="users" size={18} />
-                </span>
+                <Image
+                  className="partner-logo"
+                  src={p.logo}
+                  alt={`${p.name} logo`}
+                  width={152}
+                  height={120}
+                  sizes="76px"
+                />
                 <span className="badge badge-secondary">{p.kind}</span>
                 <h3>{p.name}</h3>
                 <p className="muted">{p.role}</p>

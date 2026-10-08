@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import Photo from "@/components/Photo";
+import PageHero from "@/components/PageHero";
+import { photo } from "@/lib/data";
 import {
   featuredPost,
   formatNewsDate,
@@ -57,21 +59,13 @@ export default function NewsIndex() {
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
-          <p className="eyebrow">News &amp; stories</p>
-          <h1>What&apos;s happened at the centre.</h1>
-          <p className="lead muted">
-            Milestones, openings, exhibitions and training — reported and sourced. Every story here links back to the
-            original report so you can read it at the source.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={<p className="eyebrow">News &amp; stories</p>}
+        title="What&apos;s happened at the centre."
+        lead="Milestones, openings, exhibitions and training — reported and sourced. Every story here links back to the original report so you can read it at the source."
+        image={photo("photo-1495446815901-a7297e633e8d", 1600)}
+        priority
+      />
 
       {featuredVisible ? (
         <section className="section-tight">

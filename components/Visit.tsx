@@ -2,16 +2,15 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import Icon from "./Icon";
-import { FACEBOOK_URL, MAP_URL, topics } from "@/lib/data";
-
-const ADDRESS = "Agona Wiamoase, Sekyere South District, Ashanti Region, Ghana";
+import { FACEBOOK_URL, MAP_URL, topics, ADDRESS, PLUS_CODE } from "@/lib/data";
 
 type FieldErrors = { name?: string; email?: string; message?: string };
 
-export default function Visit() {
+export default function Visit({ photo }: { photo?: string }) {
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [copied, setCopied] = useState(false);
+  const [copiedCode, setCopiedCode] = useState(false);
   const [topic, setTopic] = useState(topics[0]);
 
   // Deep links (e.g. /?topic=Volunteering#visit) preselect the topic.
@@ -67,11 +66,11 @@ export default function Visit() {
     form.reset();
   }
 
-  async function copyAddress() {
+async function copy(text: string, set: (v: boolean) => void) {
     try {
-      await navigator.clipboard.writeText(ADDRESS);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
+      await navigator.clipboard.writeText(text);
+      set(true);
+      setTimeout(() => set(false), 2500);
     } catch {
       /* clipboard unavailable */
     }
@@ -80,7 +79,10 @@ export default function Visit() {
   const errId = (k: keyof FieldErrors) => `err-${k}`;
 
   return (
-    <section id="visit" className="band">
+    <section id="visit" className={`band${photo ? " visit-photo" : ""}`}>
+      {photo ? (
+        <div className="visit-bg" aria-hidden="true" style={{ backgroundImage: `url(${photo})` }} />
+      ) : null}
       <div className="container contact">
         <div>
           <div className="heading">
@@ -88,17 +90,30 @@ export default function Visit() {
             <h2>Come in and explore.</h2>
             <p className="muted">Questions about the library, the clubs or partnerships? Send us a message.</p>
           </div>
-          <div className="info">
-            <div className="info-row">
+          <div className="info info-grid">
+            <div className="info-row wide">
               <Icon name="pin" size={16} />
               <div>
                 <b>Location</b>
                 <span>{ADDRESS}</span>
-                <button type="button" className="linklike" onClick={copyAddress}>
+                <button type="button" className="linklike" onClick={() => copy(ADDRESS, setCopied)}>
                   {copied ? "Copied ✓" : "Copy address"}
                 </button>
                 <span role="status" className="sr-status">
                   {copied ? "Address copied to clipboard" : ""}
+                </span>
+              </div>
+            </div>
+            <div className="info-row">
+              <Icon name="code" size={16} />
+              <div>
+                <b>Plus code</b>
+                <span>{PLUS_CODE}</span>
+                <button type="button" className="linklike" onClick={() => copy(PLUS_CODE, setCopiedCode)}>
+                  {copiedCode ? "Copied ✓" : "Copy code"}
+                </button>
+                <span role="status" className="sr-status">
+                  {copiedCode ? "Plus code copied to clipboard" : ""}
                 </span>
               </div>
             </div>
@@ -129,7 +144,7 @@ export default function Visit() {
                 </span>
               </div>
             </div>
-            <div className="info-row">
+            <div className="info-row wide">
               <Icon name="facebook" size={16} />
               <div>
                 <b>Facebook</b>
@@ -139,10 +154,6 @@ export default function Visit() {
               </div>
             </div>
           </div>
-          <a className="btn btn-outline" href={MAP_URL} target="_blank" rel="noopener noreferrer">
-            <Icon name="pin" size={16} />
-            Get directions
-          </a>
         </div>
 
         <form className="card" onSubmit={onSubmit} noValidate>
@@ -191,14 +202,17 @@ export default function Visit() {
                 </div>
               </div>
             </fieldset>
-            <div className="field">
-              <label htmlFor="t">Topic</label>
-              <select id="t" name="topic" value={topic} onChange={(e) => setTopic(e.target.value)}>
+            <fieldset className="fieldset topic-field">
+              <legend>Topic</legend>
+              <div className="topic-chips">
                 {topics.map((t) => (
-                  <option key={t}>{t}</option>
+                  <label className="chip" key={t}>
+                    <input type="radio" name="topic" value={t} checked={topic === t} onChange={() => setTopic(t)} />
+                    <span>{t}</span>
+                  </label>
                 ))}
-              </select>
-            </div>
+              </div>
+            </fieldset>
             <div className="field">
               <label htmlFor="m">Message</label>
               <textarea
@@ -223,6 +237,9 @@ export default function Visit() {
             <button className="btn btn-default btn-block" type="submit">
               Send message
             </button>
+            <p className="form-note muted">
+              We only use your details to reply — see the <a href="/privacy">privacy page</a>.
+            </p>
             {sent && (
               <p role="status" className="form-success">
                 <Icon name="check" size={16} />
@@ -231,6 +248,18 @@ export default function Visit() {
             )}
           </div>
         </form>
+      </div>
+      <div className="container">
+        <div className="btn-row center visit-actions">
+          <a className="btn btn-default btn-lg" href={MAP_URL} target="_blank" rel="noopener noreferrer">
+            <Icon name="pin" size={16} />
+            Get directions
+          </a>
+          <a className="btn btn-outline btn-lg" href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+            <Icon name="facebook" size={16} />
+            Message on Facebook
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import Photo from "@/components/Photo";
-import { ashantiCodes, clubs, stemLab } from "@/lib/data";
+import ClubIcon from "@/components/ClubIcon";
+import { ashantiCodes, clubs, stemLab, photo } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Clubs & Programmes | Wiamoase Diaspora Public Library",
@@ -15,25 +17,19 @@ const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
 export default function ClubsPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Clubs &amp; programmes</span>
           </nav>
-          <h1>Three clubs, and the partners who make them possible.</h1>
-          <p className="lead muted">
-            The clubs run through the week at the centre. The STEM Lab and Ashanti Codes are funded and delivered with
-            external partners. Everything here is free to join.
-          </p>
-        </div>
-      </section>
+        }
+        title="Three clubs, and the partners who make them possible."
+        lead="The clubs run through the week at the centre. The STEM Lab and Ashanti Codes are funded and delivered with external partners. Everything here is free to join."
+        image={photo("photo-1485827404703-89b55fcc595e", 1600)}
+        priority
+      />
 
       <section className="section-tight">
         <div className="container">
@@ -51,7 +47,7 @@ export default function ClubsPage() {
               <article className="club-card" key={c.id}>
                 <div className="club-card-top">
                   <span className="icon-box" aria-hidden="true">
-                    <Icon name={c.icon} />
+                    <ClubIcon club={c} size={20} />
                   </span>
                   <span className="badge badge-secondary">{c.ageGroup}</span>
                 </div>

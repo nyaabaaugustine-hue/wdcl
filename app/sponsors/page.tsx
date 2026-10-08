@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Icon from "@/components/Icon";
-import { MAP_URL, memberStats, partners, sponsorTiers } from "@/lib/data";
+import { MAP_URL, memberStats, partners, sponsorTiers, photo } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Sponsors & Supporters | Wiamoase Diaspora Public Library",
@@ -12,25 +14,19 @@ export const metadata: Metadata = {
 export default function SponsorsPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Sponsors &amp; supporters</span>
           </nav>
-          <h1>A library paid for by people who had left it.</h1>
-          <p className="lead muted">
-            The Learning Development Centre in Agona Wiamoase was funded by citizens of the town living overseas,
-            then equipped in partnership for STEM education. This page records who has given what.
-          </p>
-        </div>
-      </section>
+        }
+        title="A library paid for by people who had left it."
+        lead="The Learning Development Centre in Agona Wiamoase was funded by citizens of the town living overseas, then equipped in partnership for STEM education. This page records who has given what."
+        image={photo("photo-1519389950473-47ba0277781c", 1600)}
+        priority
+      />
 
       <section>
         <div className="container">
@@ -59,9 +55,20 @@ export default function SponsorsPage() {
             <div className="tier-grid">
               {tier.sponsors.map((s) => (
                 <article className={`supporter${s.confirmed ? "" : " pending"}`} key={`${tier.id}-${s.role}`}>
-                  <span className={`supporter-mark mark-${tier.id}`} aria-hidden="true">
-                    <Icon name={s.confirmed ? "check" : "heart"} size={18} />
-                  </span>
+                  {s.logo ? (
+                    <Image
+                      className="supporter-logo"
+                      src={s.logo}
+                      alt={`${s.name} logo`}
+                      width={152}
+                      height={120}
+                      sizes="76px"
+                    />
+                  ) : (
+                    <span className={`supporter-mark mark-${tier.id}`} aria-hidden="true">
+                      <Icon name={s.confirmed ? "check" : "heart"} size={18} />
+                    </span>
+                  )}
                   <h3>{s.name}</h3>
                   <p className="role">{s.role}</p>
                   {s.note ? <p className="muted">{s.note}</p> : null}
@@ -85,6 +92,14 @@ export default function SponsorsPage() {
           <div className="partner-grid">
             {partners.map((p) => (
               <article className="partner" key={p.name}>
+                <Image
+                  className="partner-logo"
+                  src={p.logo}
+                  alt={`${p.name} logo`}
+                  width={152}
+                  height={120}
+                  sizes="76px"
+                />
                 <span className="badge badge-secondary">{p.kind}</span>
                 <h3>{p.name}</h3>
                 <p className="muted">{p.role}</p>

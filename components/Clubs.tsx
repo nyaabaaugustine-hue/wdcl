@@ -1,17 +1,43 @@
 "use client";
 
-import { useState } from "react";
-import Icon from "./Icon";
+import { KeyboardEvent, useState } from "react";
+import ClubIcon from "./ClubIcon";
 import { clubs } from "@/lib/data";
 
 const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
+const DAY_NAMES = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 export default function Clubs() {
   const [active, setActive] = useState(clubs[0].id);
   const club = clubs.find((c) => c.id === active) ?? clubs[0];
 
+  const meetsDays = DAY_NAMES.filter((_, i) => club.days[i]);
+
+  function onTabKey(e: KeyboardEvent<HTMLDivElement>) {
+    const idx = clubs.findIndex((c) => c.id === active);
+    let next = idx;
+    if (e.key === "ArrowRight") next = (idx + 1) % clubs.length;
+    else if (e.key === "ArrowLeft") next = (idx - 1 + clubs.length) % clubs.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = clubs.length - 1;
+    else return;
+    e.preventDefault();
+    setActive(clubs[next].id);
+    requestAnimationFrame(() =>
+      document.getElementById(`club-tab-${clubs[next].id}`)?.focus(),
+    );
+  }
+
   return (
-    <section id="clubs" className="band">
+    <section id="clubs">
       <div className="container">
         <div className="heading">
           <p className="eyebrow">Clubs</p>
@@ -19,51 +45,65 @@ export default function Clubs() {
           <p className="muted">Hands-on learning in the Robotics &amp; ICT Centre and the library&apos;s reading space.</p>
         </div>
 
-        <div className="tabs-list" role="tablist">
+        <div className="tabs-list" role="tablist" aria-label="Club programmes" onKeyDown={onTabKey}>
           {clubs.map((c) => (
             <button
               key={c.id}
+              id={`club-tab-${c.id}`}
               role="tab"
+              type="button"
               aria-selected={c.id === active}
+              aria-controls="club-panel"
+              tabIndex={c.id === active ? 0 : -1}
               className={`tab${c.id === active ? " active" : ""}`}
               onClick={() => setActive(c.id)}
             >
-              <Icon name={c.icon} />
+              <ClubIcon club={c} size={16} />
               {c.label}
             </button>
           ))}
         </div>
 
-        <div className="tab-panel active card" role="tabpanel">
+        <div
+          className="tab-panel active card"
+          role="tabpanel"
+          id="club-panel"
+          aria-labelledby={`club-tab-${active}`}
+        >
           <div className="club">
             <div className="club-left">
               <span className="badge badge-brand">{club.badge}</span>
               <h3>{club.title}</h3>
               <p className="muted">{club.blurb}</p>
-              <div className="facts">
+              <dl className="facts">
                 <div className="fact">
-                  <span>Meets</span>
-                  <span>{club.meets}</span>
+                  <dt>Meets</dt>
+                  <dd>{club.meets}</dd>
                 </div>
                 <div className="fact">
-                  <span>Time</span>
-                  <span>{club.time}</span>
+                  <dt>Time</dt>
+                  <dd>{club.time}</dd>
                 </div>
                 <div className="fact">
-                  <span>Venue</span>
-                  <span>{club.venue}</span>
+                  <dt>Venue</dt>
+                  <dd>{club.venue}</dd>
                 </div>
-              </div>
-              <a href="#visit" className="btn btn-default">
-                Register interest
-              </a>
-              <div className="days">
+              </dl>
+              <div className="days" role="img" aria-label={`Meeting days: ${meetsDays.join(" and ")}`}>
                 {DAY_LETTERS.map((d, i) => (
-                  <span key={i} className={club.days[i] ? "on" : undefined}>
+                  <span key={i} className={club.days[i] ? "on" : undefined} aria-hidden="true" title={DAY_NAMES[i]}>
                     {d}
                   </span>
                 ))}
               </div>
+              <a
+                href={`/?topic=${encodeURIComponent(club.title)}#visit`}
+                className="btn btn-default"
+                data-dialog="join"
+                data-club={club.title}
+              >
+                Register interest
+              </a>
             </div>
             <div className="club-right">
               <h4>Programmes</h4>
@@ -85,7 +125,8 @@ export default function Clubs() {
         <div className="card table-wrap">
           <table>
             <caption>
-              Proposed schedule: days, times and venues to be confirmed with the library team before publishing.
+              <b>Proposed schedule.</b> Days, times and venues to be confirmed
+              with the library team before publishing.
             </caption>
             <thead>
               <tr>

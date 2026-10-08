@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GalleryGrid from "@/components/GalleryGrid";
+import PageHero from "@/components/PageHero";
+import { photo } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Gallery | Wiamoase Diaspora Public Library",
@@ -11,24 +13,19 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
+      <PageHero
+        eyebrow={
           <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span>Gallery</span>
           </nav>
-          <h1>Inside the centre.</h1>
-          <p className="lead muted">
-            The reading room, the robotics bench, the clubs in session and the hall where the community meets.
-          </p>
-        </div>
-      </section>
+        }
+        title="Inside the centre."
+        lead="The reading room, the robotics bench, the clubs in session and the hall where the community meets."
+        image={photo("photo-1507842217343-583bb7270b66", 1600)}
+        priority
+      />
 
       <section className="section-tight">
         <div className="container">

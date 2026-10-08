@@ -8,7 +8,7 @@ const items = [
 
 export default function Support() {
   return (
-    <section className="section-tight">
+    <section className="support-band">
       <div className="container">
         <div className="cta-card">
           <div>
@@ -25,9 +25,14 @@ export default function Support() {
                 </li>
               ))}
             </ul>
-            <a href="#visit" className="btn btn-lg">
-              Get in touch
-            </a>
+            <div className="support-actions">
+              <a href="#visit" className="btn btn-lg" data-dialog="visit">
+                Get in touch
+              </a>
+              <a href="/volunteer" className="btn btn-lg" data-dialog="volunteer">
+                Become a Volunteer
+              </a>
+            </div>
           </div>
         </div>
       </div>
