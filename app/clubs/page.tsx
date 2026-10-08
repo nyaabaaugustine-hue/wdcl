@@ -153,7 +153,7 @@ export default function ClubsPage() {
                   <span>{ashantiCodes.format}</span>
                 </div>
               </div>
-              <h4 className="sub-h">What students built</h4>
+              <h3 className="sub-h">What students built</h3>
               <ul className="ticks">
                 {ashantiCodes.projects.map((p) => (
                   <li key={p}>

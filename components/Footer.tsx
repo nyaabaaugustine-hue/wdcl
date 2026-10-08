@@ -37,13 +37,13 @@ export default function Footer() {
               </a>
             </div>
             <div className="footer-nl">
-              <h4>Newsletter</h4>
+              <h2>Newsletter</h2>
               <p className="muted">Occasional news from the centre. No spam.</p>
               <NewsletterForm />
             </div>
           </div>
           <nav aria-label="Library">
-            <h4>Library</h4>
+            <h2>Library</h2>
             <a href="/#overview">Overview</a>
             <a href="/about">About</a>
             <a href="/#facilities">Facilities</a>
@@ -53,14 +53,14 @@ export default function Footer() {
             <a href="/gallery">Gallery</a>
           </nav>
           <nav aria-label="Get involved">
-            <h4>Get involved</h4>
+            <h2>Get involved</h2>
             <a href="/news">News &amp; stories</a>
             <a href="/sponsors">Sponsors</a>
             <a href="/partners">Partners</a>
             <a href="/volunteer">Volunteer</a>
           </nav>
           <nav aria-label="Connect">
-            <h4>Connect</h4>
+            <h2>Connect</h2>
             <a href="/#visit">Visit &amp; contact</a>
             <a href="/contact">Email us</a>
             <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">

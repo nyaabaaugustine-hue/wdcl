@@ -43,7 +43,7 @@ export default function PartnersPage() {
                   sizes="76px"
                 />
                 <span className="badge badge-secondary">{p.kind}</span>
-                <h3>{p.name}</h3>
+                <h2>{p.name}</h2>
                 <p className="muted">{p.role}</p>
               </article>
             ))}
