@@ -86,6 +86,16 @@ const pairs = [
   ["crumbs link", "muted-foreground", "background", 4.5],
   ["form error text", "clay-ink", "background", 4.5],
   ["status/copy text", "primary", "background", 4.5],
+  // newer sections
+  ["stat figure", "brand-ink", "card", 4.5],
+  ["visit fact label", "brand-ink", "card", 4.5],
+  ["cat-diaspora text", "clay-ink", "clay-soft", 4.5],
+  ["fx-note / vp-code", "brand-ink", "brand-soft", 4.5],
+  ["cl-prog number", "brand-ink", "brand-soft", 4.5],
+  ["faq answer", "muted-foreground", "background", 4.5],
+  ["glance role", "muted-foreground", "surface-tint", 4.5],
+  ["gv-small body", "muted-foreground", "background", 4.5],
+  ["gv-small eyebrow", "brand-ink", "background", 4.5],
 ];
 
 // worst composited hero-photo backgrounds (measured via hero_photo_check.py)
@@ -143,6 +153,45 @@ for (const [theme, t] of Object.entries(themes)) {
   const fsc = ratio(hsl2rgb(...t["primary"]), over(hsl2rgb(...t["primary"]), hsl2rgb(...t["card"]), 0.1));
   console.log(`  ${fsc >= 4.5 ? "PASS" : "FAIL"}  ${"form success text".padEnd(24)} ${fsc.toFixed(2).padStart(6)}:1  (min 4.5)`);
   if (fsc < 4.5) fail++;
+}
+
+// Tinted fills composited over the page background (checked topic chip, dialog success icon)
+for (const [theme, t] of Object.entries(themes)) {
+  const bg = hsl2rgb(...t["background"]);
+  const tint = over(hsl2rgb(...t["brand"]), bg, 0.13);
+  const r = ratio(hsl2rgb(...t["brand-ink"]), tint);
+  const ok = r >= 4.5;
+  if (!ok) fail++;
+  console.log(`  ${ok ? "PASS" : "FAIL"}  checked chip text (${theme})`.padEnd(34) + ` ${r.toFixed(2).padStart(6)}:1  (min 4.5)`);
+}
+
+// Support band (.gv-support): fixed forest + gold palette, identical in both themes.
+// Worst case assumes the photo adds nothing darker than the forest base.
+{
+  console.log("\n===== SUPPORT BAND (theme-independent) =====");
+  const forest = hsl2rgb(158, 0.42, 0.22);
+  const gold = hsl2rgb(40, 0.92, 0.58);
+  const white = [1, 1, 1];
+  const ink = hsl2rgb(28, 0.4, 0.12);
+  const checks = [
+    ["gv eyebrow (gold on forest)", ratio(gold, forest), 4.5],
+    ["gv h2 (white on forest)", ratio(white, forest), 4.5],
+    ["gv lead (white .84)", ratio(over(white, forest, 0.84), forest), 4.5],
+    ["gv way text (white .76)", ratio(over(white, forest, 0.76), forest), 4.5],
+    ["gv gold button text", ratio(ink, gold), 4.5],
+    ["gv gold icon on forest", ratio(gold, forest), 3.0],
+  ];
+  for (const [label, r, min] of checks) {
+    const ok = r >= min;
+    if (!ok) fail++;
+    console.log(`  ${ok ? "PASS" : "FAIL"}  ${label.padEnd(28)} ${r.toFixed(2).padStart(6)}:1  (min ${min})`);
+  }
+  for (const [theme, t] of Object.entries(themes)) {
+    const r = ratio(hsl2rgb(...t["primary-foreground"]), hsl2rgb(...t["primary"]));
+    const ok = r >= 4.5;
+    if (!ok) fail++;
+    console.log(`  ${ok ? "PASS" : "FAIL"}  gv solid btn text (${theme})`.padEnd(34) + ` ${r.toFixed(2).padStart(6)}:1  (min 4.5)`);
+  }
 }
 
 console.log(`\n${fail === 0 ? "ALL CHECKS PASSED" : fail + " CHECK(S) FAILED"}`);

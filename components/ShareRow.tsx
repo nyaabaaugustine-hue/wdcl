@@ -22,12 +22,11 @@ export default function ShareRow({ title }: Props) {
     }
   }
 
-  function shareTo(kind: "fb" | "x" | "wa") {
+  function shareTo(kind: "fb" | "x") {
     const u = encodeURIComponent(window.location.href);
     const t = encodeURIComponent(title);
     if (kind === "fb") open(`https://www.facebook.com/sharer/sharer.php?u=${u}`);
     if (kind === "x") open(`https://twitter.com/intent/tweet?url=${u}&text=${t}`);
-    if (kind === "wa") open(`https://wa.me/?text=${t}%20${u}`);
   }
 
   return (
@@ -44,9 +43,6 @@ export default function ShareRow({ title }: Props) {
       </button>
       <button type="button" className="chip" onClick={() => shareTo("x")}>
         X
-      </button>
-      <button type="button" className="chip" onClick={() => shareTo("wa")}>
-        WhatsApp
       </button>
       <span role="status" className="sr-status share-status">
         {copied ? "Link copied to clipboard" : ""}

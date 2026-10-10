@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import Icon from "@/components/Icon";
 import Facilities from "@/components/Facilities";
+import PageHero from "@/components/PageHero";
 import Visit from "@/components/Visit";
 import {
   ADDRESS,
@@ -36,9 +37,9 @@ const facts = [
     value: "To be confirmed — message before you travel",
   },
   {
-    icon: "heart",
-    label: "Google rating",
-    value: "4.7 stars from 3 Google reviews",
+    icon: "users",
+    label: "Clubs",
+    value: "Free to join. Days and times are on each club page",
   },
 ] as const;
 
@@ -52,98 +53,105 @@ const notes = [
 export default function VisitPage() {
   return (
     <>
-      <section className="page-hero vh-hero">
-        <Image
-          className="vh-photo"
-          src={visitPhoto}
-          alt=""
-          aria-hidden="true"
-          fill
-          sizes="100vw"
-          loading="eager"
-          priority
-        />
-        <div className="vh-scrim" aria-hidden="true" />
-        <div className="container">
-          <div className="kente-inline" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </div>
-          <p className="eyebrow">
-            <a href="/">Home</a> / Plan your visit
-          </p>
-          <h1>Come and see the centre.</h1>
-          <p className="lead muted">
-            The library, the Robotics &amp; ICT Centre and the conference hall
-            all live under one roof in Agona Wiamoase. Here is everything you
-            need before you set off.
-          </p>
+      <PageHero
+        eyebrow={
+          <nav className="eyebrow crumb-nav" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span aria-hidden="true">/</span>
+            <span>Plan your visit</span>
+          </nav>
+        }
+        title="Come and see the centre."
+        lead="The library, the Robotics & ICT Centre and the conference hall all live under one roof in Agona Wiamoase. Here is everything you need before you set off."
+        image={visitPhoto}
+        priority
+      >
+        <div className="vp-cta">
+          <a
+            className="btn btn-default btn-lg"
+            href={DIRECTIONS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="pin" size={16} />
+            Get directions
+          </a>
+          <a
+            className="btn btn-outline btn-lg"
+            href={FACEBOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="facebook" size={16} />
+            Message on Facebook
+          </a>
         </div>
-      </section>
+      </PageHero>
 
-      <section className="vh-facts">
+      <section className="vp-facts" aria-label="Visit at a glance">
         <div className="container">
-          <div className="vh-facts-grid">
+          <ul className="vp-facts-grid">
             {facts.map((f) => (
-              <div className="card vh-fact" key={f.label}>
-                <span className="icon-box">
+              <li className="vp-fact" key={f.label}>
+                <span className="vp-fact-icon" aria-hidden="true">
                   <Icon name={f.icon} />
                 </span>
                 <b>{f.label}</b>
                 <span>{f.value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Facilities />
-
-      <section className="vh-notes">
-        <div className="container">
-          <div className="heading">
-            <p className="eyebrow">Before you come</p>
-            <h2>Good to know.</h2>
-          </div>
-          <ul className="vh-list">
-            {notes.map((n) => (
-              <li key={n}>
-                <span className="vh-check" aria-hidden="true">
-                  <Icon name="check" size={14} />
-                </span>
-                {n}
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="vh-loc">
+      <section className="vp-tips">
+        <div className="container">
+          <div className="heading">
+            <p className="eyebrow">Before you come</p>
+            <h2>Good to know.</h2>
+            <p className="muted">Four things that will make your trip smoother.</p>
+          </div>
+          <ol className="vp-tips-grid">
+            {notes.map((n) => (
+              <li className="vp-tip" key={n}>
+                <span>{n}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <Facilities />
+
+      <section className="vp-loc">
         <div className="container">
           <div className="heading">
             <p className="eyebrow">Getting here</p>
             <h2>Find us in Agona Wiamoase.</h2>
             <p className="muted">
-              In the Ashanti Region of Ghana. The plus code
-              <b> {PLUS_CODE}</b> works anywhere on Google Maps.
+              In the Ashanti Region of Ghana. The plus code works anywhere on
+              Google Maps, even where there is no street address.
             </p>
           </div>
-          <div className="vh-loc-grid">
+          <div className="vp-loc-grid">
             <iframe
-              className="vh-map"
+              className="vp-map"
               src={`${MAP_URL}&output=embed`}
               title="Map showing the Wiamoase Diaspora Public Library in Agona Wiamoase"
               loading="lazy"
               allowFullScreen
             />
-            <div className="card vh-loc-card">
+            <div className="card vp-loc-card">
               <h3>Open in Maps</h3>
               <p className="muted">
-                Drop the plus code into Google Maps for turn-by-turn directions
+                Type the plus code into Google Maps for turn-by-turn directions
                 from anywhere in Ghana.
               </p>
-              <div className="vh-links">
+              <span className="vp-code">
+                <Icon name="code" size={16} />
+                {PLUS_CODE}
+              </span>
+              <div className="vp-links">
                 <a
                   className="btn btn-default"
                   href={DIRECTIONS_URL}
@@ -162,22 +170,13 @@ export default function VisitPage() {
                   <Icon name="pin" size={16} />
                   View on Google Maps
                 </a>
-                <a
-                  className="btn btn-outline"
-                  href={FACEBOOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon name="facebook" size={16} />
-                  Message on Facebook
-                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Visit photo={visitPhoto} />
+      <Visit photo={visitPhoto} showInfo={false} />
     </>
   );
 }

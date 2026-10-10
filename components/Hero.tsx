@@ -1,4 +1,6 @@
 import HeroBackdrop from "./HeroBackdrop";
+import Image from "next/image";
+import { MAP_URL, partners } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -6,28 +8,51 @@ export default function Hero() {
       <HeroBackdrop />
       <div className="hero-scrim" aria-hidden="true" />
       <div className="container">
-        <div className="kente-inline" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </div>
         <a href="#facilities" className="badge badge-secondary">
-          <span className="dot" /> New: Robotics &amp; ICT Centre, powered by MTN Ghana Foundation →
+          <span className="dot" /> Robotics &amp; ICT Centre, powered by MTN Ghana Foundation →
         </a>
         <h1>
           A library built by a town&apos;s <span>children abroad.</span>
         </h1>
-        <p className="lead">
-          The Wiamoase Diaspora Public Library is a branch of the Ghana Library Authority in Ashanti, funded by
-          Wiamoase citizens living overseas for the people back home.
+        <p className="lead muted">
+          A branch of the Ghana Library Authority in Agona Wiamoase, Ashanti Region — a reading room,
+          a Robotics &amp; ICT Centre and a meeting hall, built by Wiamoase citizens abroad for the town&apos;s children.
         </p>
         <div className="cta">
-          <a href="#overview" className="btn btn-default btn-lg">
-            Read the overview
+          <a href="/join" className="btn btn-default btn-lg">
+            Join a club
           </a>
-          <a href="#clubs" className="btn btn-outline btn-lg">
-            Explore the clubs
+          <a href="#visit" className="btn btn-outline btn-lg">
+            Visit us
           </a>
+        </div>
+        <dl className="hero-facts">
+          <div>
+            <dt>Where</dt>
+            <dd>
+              <a href={MAP_URL} target="_blank" rel="noopener noreferrer">
+                Agona Wiamoase, Ashanti Region
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Ghana Library Authority branch</dd>
+          </div>
+          <div>
+            <dt>Clubs</dt>
+            <dd>Coding · Robotics · Reading, free to join</dd>
+          </div>
+        </dl>
+        <div className="hero-trust">
+          <span className="hero-trust-label">Supported by</span>
+          <ul>
+            {partners.slice(0, 2).map((p) => (
+              <li key={p.name}>
+                <Image src={p.logo} alt={p.name} width={51} height={40} sizes="51px" />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

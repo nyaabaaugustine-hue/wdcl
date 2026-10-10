@@ -104,6 +104,9 @@ export default function Clubs() {
               >
                 Register interest
               </a>
+              <a href="/join" className="card-link">
+                How joining works →
+              </a>
             </div>
             <div className="club-right">
               <h4>Programmes</h4>
@@ -122,36 +125,10 @@ export default function Clubs() {
           </div>
         </div>
 
-        <div className="card table-wrap">
-          <table>
-            <caption>
-              <b>Proposed schedule.</b> Days, times and venues to be confirmed
-              with the library team before publishing.
-            </caption>
-            <thead>
-              <tr>
-                <th>Club</th>
-                <th>Days</th>
-                <th>Time</th>
-                <th>Age group</th>
-                <th>Venue</th>
-              </tr>
-            </thead>
-            <tbody>
-              {clubs.map((c) => (
-                <tr key={c.id}>
-                  <td>
-                    <b>{c.label}</b>
-                  </td>
-                  <td>{c.shortDays}</td>
-                  <td>{c.time}</td>
-                  <td>{c.ageGroup}</td>
-                  <td>{c.venue}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <p className="clubs-note muted">
+          All clubs are free to join. Times can change, so please confirm with the library team before you travel.{" "}
+          <a href="/clubs">Compare every club</a>.
+        </p>
       </div>
     </section>
   );

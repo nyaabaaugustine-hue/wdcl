@@ -1,3 +1,17 @@
+import { pick, GENERIC_ALT, libraryPhotos } from "@/lib/media";
+
+/**
+ * Card photos from /media.assets, chosen by position in `libraryPhotos` (lib/media.ts)
+ * so each card gets its own photo. If one shows the wrong thing, change its number
+ * here (0 to 33) and write a real `imageAlt` for it.
+ */
+const CARD_PHOTO = {
+  robotics: libraryPhotos[5],
+  conference: libraryPhotos[13],
+  afterClass: libraryPhotos[20],
+  coding: libraryPhotos[9],
+} as const;
+
 export const FACEBOOK_URL =
   "https://www.facebook.com/people/Wiamoase-Diaspora-Public-Library/100086561113171/";
 export const MAP_URL = "https://www.google.com/maps?q=7.067,-1.533";
@@ -12,13 +26,13 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { href: "/", label: "Home" },
   {
     label: "About",
     children: [
       { label: "About us", href: "/about" },
       { label: "Our story", href: "/#story" },
       { label: "Facilities", href: "/#facilities" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
@@ -26,6 +40,7 @@ export const navLinks: NavLink[] = [
     children: [
       { label: "Our Programs", href: "/programs" },
       { label: "Clubs", href: "/clubs" },
+      { label: "Join a club", href: "/join" },
       { label: "Gallery", href: "/gallery" },
     ],
   },
@@ -35,67 +50,74 @@ export const navLinks: NavLink[] = [
       { label: "Sponsors", href: "/sponsors" },
       { label: "Partners", href: "/partners" },
       { label: "Volunteer", href: "/volunteer" },
+      { label: "Support the centre", href: "/donate" },
+      { label: "Hire the hall", href: "/hire" },
     ],
   },
   { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" },
-  { href: "/visit", label: "Visit" },
+  {
+    label: "Visit & contact",
+    children: [
+      { label: "Plan a visit", href: "/visit" },
+      { label: "Contact us", href: "/contact" },
+    ],
+  },
 ];
 
 /** Hero photograph of the centre — shared by the Visit page and the Contact backdrop. */
 export const visitPhoto =
   "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791290476/540452100_761460213416009_8447312575741898348_n_yo9ddu.jpg";
 
-/** Centralised photography source so every image can be swapped in one place. */
-export const photo = (id: string, width: number) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`;
+/**
+ * Centralised photography source so every image can be swapped in one place.
+ * Now served from /media.assets (see lib/media.ts); the id is only a stable key,
+ * so existing `photo("photo-…", w)` calls keep working and get a real photo.
+ */
+export const photo = (id: string, _width?: number) => pick(id);
 
 export const heroPhotos = [
   {
-    src: photo("photo-1507842217343-583bb7270b66", 800),
-    full: photo("photo-1507842217343-583bb7270b66", 1600),
-    alt: "Tall shelves of books in the library reading room",
-    caption: "The community library reading room",
+    src: "/media/slider-1.jpg",
+    full: "/media/slider-1.jpg",
+    alt: "A photograph from Wiamoase library",
+    caption: "Inside the centre",
   },
   {
-    src: photo("photo-1485827404703-89b55fcc595e", 800),
-    full: photo("photo-1485827404703-89b55fcc595e", 1600),
-    alt: "A humanoid robot on a workbench in the Robotics and ICT Centre",
-    caption: "Robotics & ICT Centre",
+    src: "/media/slider-2.jpg",
+    full: "/media/slider-2.jpg",
+    alt: "A photograph from Wiamoase library",
+    caption: "Learning together",
   },
   {
-    src: photo("photo-1522202176988-66273c2fd55f", 800),
-    full: photo("photo-1522202176988-66273c2fd55f", 1600),
-    alt: "Club members working together around a laptop",
-    caption: "Club members at work",
+    src: "/media/slider-3.jpg",
+    full: "/media/slider-3.jpg",
+    alt: "A photograph from Wiamoase library",
+    caption: "The Wiamoase centre",
   },
 ] as const;
 
 export const storyPhoto = {
-  src: photo("photo-1495446815901-a7297e633e8d", 900),
-  alt: "Rows of book stacks in a public library",
-  caption: "Built for the town, stocked by the diaspora",
+  src: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791461530/thumbnail_IMG-20220419-WA0034_wcn0q8.jpg",
+  alt: "The Learning Development Centre in Wiamoase, Ghana",
+  caption: "The Learning Development Centre",
 } as const;
 
 /** Decorative wash behind the homepage hero. Placeholder pending approved photography. */
 export const heroBackdrop = {
-  src: photo("photo-1481627834876-b7833e8f5570", 800),
-  full: photo("photo-1481627834876-b7833e8f5570", 1600),
-  alt: "Library interior with warm hanging lights over the stacks",
+  src: pick("hero-backdrop"),
+  full: pick("hero-backdrop"),
+  alt: GENERIC_ALT,
 } as const;
 
 /** Decorative crossfading background behind the hero copy. Swap for
  *  /media/hero-bg-*.jpg once the assets folder is renamed by slot. */
-export const heroBackdropSlides: string[] = [
-  heroBackdrop.full,
-  ...heroPhotos.map((p) => p.full),
-];
+export const heroBackdropSlides: string[] = [heroBackdrop.full];
 
 export const stats = [
-  { value: "~$500K", label: "Raised by diaspora citizens", href: "#story" },
-  { value: "2022", label: "Learning Centre inaugurated", href: "#story" },
-  { value: "Nov 2024", label: "Robotics & ICT Centre commissioned", href: "#facilities" },
-  { value: "1st", label: "MTN STEM library in Ashanti", href: "#facilities" },
+  { value: "~$500K", label: "Reported raised by diaspora citizens", href: "#story" },
+  { value: "3", label: "Free clubs: coding, robotics, reading", href: "#clubs" },
+  { value: "12", label: "Weekly programmes", href: "/programs" },
+  { value: "1st", label: "Integrated STEM lab of its kind in Ashanti", href: "#facilities" },
 ];
 
 export const glance = [
@@ -114,7 +136,7 @@ export const facilities = [
     icon: "book",
     title: "Community Library",
     text: "A stocked public library with offices, serving students, teachers and residents of Wiamoase and nearby towns.",
-    image: photo("photo-1507842217343-583bb7270b66", 640),
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791466702/vv_z2zakh.jpg",
     imageAlt: "Shelves of books in the community library",
     href: "/#overview",
   },
@@ -122,24 +144,25 @@ export const facilities = [
     icon: "robot",
     title: "Robotics & ICT Centre",
     text: "Robotics kits, laptops, desktop computers and AI tools for STEM education, commissioned 26 November 2024.",
-    image: photo("photo-1485827404703-89b55fcc595e", 640),
-    imageAlt: "Robotics kit on a workbench in the ICT Centre",
+    image: CARD_PHOTO.robotics,
+    imageAlt: GENERIC_ALT,
+    note: "Equipped by the MTN Ghana Foundation",
     href: "/clubs/robotics",
   },
   {
     icon: "users",
     title: "Conference Centre",
     text: "A furnished hall for meetings, workshops and community events. It is also a source of income to maintain the centre.",
-    image: photo("photo-1509062522246-3755977927d7", 640),
-    imageAlt: "Seated hall set up for a community workshop",
-    href: "/#visit",
+    image: CARD_PHOTO.conference,
+    imageAlt: GENERIC_ALT,
+    href: "/hire",
   },
   {
     icon: "grad",
     title: "After-Class Studies & Tutorials",
     text: "Supervised after-school sessions for homework, revision and small-group tuition, making full use of the library's books and computers.",
-    image: photo("photo-1503676260728-1c00da094a0b", 640),
-    imageAlt: "Students studying together around a table",
+    image: CARD_PHOTO.afterClass,
+    imageAlt: GENERIC_ALT,
     href: "/programs",
   },
 ] as const;
@@ -197,8 +220,8 @@ export const clubs: Club[] = [
       "Anyone curious about how websites and games are made",
       "Members who want to work at their own pace",
     ],
-    image: photo("photo-1522202176988-66273c2fd55f", 1200),
-    imageAlt: "Club members working together around a laptop",
+    image: CARD_PHOTO.coding,
+    imageAlt: GENERIC_ALT,
     programmes: [
       { title: "Computer Literacy Basics", desc: "Typing, files, internet safety and office tools. Tuesdays." },
       { title: "Scratch Starters", desc: "Visual coding: animations and simple games." },
@@ -233,8 +256,8 @@ export const clubs: Club[] = [
       "Members interested in engineering and electronics",
       "Teams of four — no experience needed to join a team",
     ],
-    image: photo("photo-1485827404703-89b55fcc595e", 1200),
-    imageAlt: "A humanoid robot on a workbench in the Robotics and ICT Centre",
+    image: CARD_PHOTO.robotics,
+    imageAlt: GENERIC_ALT,
     supporter: "Equipment funded by the MTN Ghana Foundation",
     iconImg: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791283746/jhh_labq8g.png",
     programmes: [
@@ -274,7 +297,7 @@ export const clubs: Club[] = [
       "Families who want to read together",
       "Adults looking for a monthly discussion group",
     ],
-    image: photo("photo-1507842217343-583bb7270b66", 1200),
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791466702/vv_z2zakh.jpg",
     imageAlt: "Tall shelves of books in the library reading room",
     programmes: [
       { title: "Story Circle", desc: "Read-aloud sessions, including Twi stories, for ages 4–9." },
@@ -364,6 +387,7 @@ export const topics = [
   "Robotics Club",
   "Reading Club",
   "Donations & partnerships",
+  "Hall hire",
   "Volunteering",
 ];
 
@@ -494,46 +518,46 @@ export type GalleryImage = {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: photo("photo-1507842217343-583bb7270b66", 900),
-    full: photo("photo-1507842217343-583bb7270b66", 1600),
-    alt: "Tall shelves of books in the library reading room",
-    caption: "The community library reading room",
-    tag: "Library",
+    src: "/media/gallery-1.jpg",
+    full: "/media/gallery-1.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Photograph from the Wiamoase centre",
+    tag: "Centre",
   },
   {
-    src: photo("photo-1485827404703-89b55fcc595e", 900),
-    full: photo("photo-1485827404703-89b55fcc595e", 1600),
-    alt: "A humanoid robot on a workbench",
-    caption: "Robotics kits in the ICT Centre",
-    tag: "Robotics & ICT",
+    src: "/media/gallery-2.jpg",
+    full: "/media/gallery-2.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Around the centre",
+    tag: "Centre",
   },
   {
-    src: photo("photo-1522202176988-66273c2fd55f", 900),
-    full: photo("photo-1522202176988-66273c2fd55f", 1600),
-    alt: "Club members working together around a laptop",
-    caption: "Coding Club session",
-    tag: "Clubs",
+    src: "/media/gallery-3.jpg",
+    full: "/media/gallery-3.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Inside the centre",
+    tag: "Centre",
   },
   {
-    src: photo("photo-1509062522246-3755977927d7", 900),
-    full: photo("photo-1509062522246-3755977927d7", 1600),
-    alt: "A hall set out with seating for a community event",
-    caption: "The conference centre",
-    tag: "Community",
+    src: "/media/gallery-4.jpg",
+    full: "/media/gallery-4.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Learning in Wiamoase",
+    tag: "Centre",
   },
   {
-    src: photo("photo-1495446815901-a7297e633e8d", 900),
-    full: photo("photo-1495446815901-a7297e633e8d", 1600),
-    alt: "Rows of book stacks in a public library",
-    caption: "Stock donated by the diaspora",
-    tag: "Library",
+    src: "/media/gallery-5.jpg",
+    full: "/media/gallery-5.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Community life",
+    tag: "Centre",
   },
   {
-    src: photo("photo-1519389950473-47ba0277781c", 900),
-    full: photo("photo-1519389950473-47ba0277781c", 1600),
-    alt: "Students collaborating around a computer",
-    caption: "ICT literacy training",
-    tag: "Robotics & ICT",
+    src: "/media/gallery-6.jpg",
+    full: "/media/gallery-6.jpg",
+    alt: "A photograph from the Wiamoase library",
+    caption: "Programmes at the centre",
+    tag: "Centre",
   },
 ];
 

@@ -22,7 +22,7 @@ export default function SponsorsPage() {
             <span>Sponsors &amp; supporters</span>
           </nav>
         }
-        title="A library paid for by people who had left it."
+        title="Built by the community"
         lead="The Learning Development Centre in Agona Wiamoase was funded by citizens of the town living overseas, then equipped in partnership for STEM education. This page records who has given what."
         image={photo("photo-1519389950473-47ba0277781c", 1600)}
         priority

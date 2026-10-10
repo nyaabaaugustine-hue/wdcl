@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Icon from "./Icon";
 import Photo from "./Photo";
 import { facilities } from "@/lib/data";
 
 export default function Facilities() {
-  const [feature] = facilities;
+  const [active, setActive] = useState(0);
+  const current = facilities[active];
 
   return (
     <section id="facilities" className="band">
@@ -18,27 +22,37 @@ export default function Facilities() {
         </div>
         <div className="fac-layout">
           <Photo
-            className="fac-photo"
-            src={feature.image}
-            alt={feature.imageAlt}
+            key={current.title}
+            className="fac-photo fac-photo-swap"
+            src={current.image}
+            alt={current.imageAlt}
             ratio="4-5"
             sizes="(max-width: 900px) 100vw, 42vw"
           />
           <div className="fac-list">
-            {facilities.map((f) => (
-              <article className="fac-row" key={f.title}>
-                <span className="icon-box">
-                  <Icon name={f.icon} />
-                </span>
-                <div>
-                  <h3>{f.title}</h3>
-                  <p>{f.text}</p>
-                  <a className="card-link" href={f.href}>
-                    Learn more <Icon name="arrow" size={13} />
-                  </a>
-                </div>
-              </article>
-            ))}
+            {facilities.map((f, i) => {
+              const note = "note" in f ? f.note : null;
+              return (
+                <article
+                  className={`fac-row${i === active ? " is-active" : ""}`}
+                  key={f.title}
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                >
+                  <span className="icon-box">
+                    <Icon name={f.icon} />
+                  </span>
+                  <div>
+                    <h3>{f.title}</h3>
+                    <p>{f.text}</p>
+                    {note ? <p className="fac-note">{note}</p> : null}
+                    <a className="card-link" href={f.href}>
+                      See {f.title} <Icon name="arrow" size={13} />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

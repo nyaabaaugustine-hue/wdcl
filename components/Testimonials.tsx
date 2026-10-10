@@ -58,7 +58,7 @@ export default function Testimonials() {
             <i />
           </div>
           <Stars />
-          <blockquote className="tl-big" aria-live="polite">
+          <blockquote className="tl-big" aria-live={frozen ? "polite" : "off"}>
             “{v.quote}”
           </blockquote>
           <div className="tl-who-row">

@@ -1,3 +1,5 @@
+import { pick, GENERIC_ALT } from "@/lib/media";
+
 /**
  * News and stories for the library site.
  *
@@ -32,8 +34,8 @@ export type NewsPost = {
   alsoReported?: { name: string; url: string }[];
 };
 
-const img = (id: string, width: number) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=70`;
+// Real photography from /media.assets (see lib/media.ts); the id is only a stable key.
+const img = (id: string, _width?: number) => pick(id);
 
 export const newsPosts: NewsPost[] = [
   {
@@ -44,7 +46,7 @@ export const newsPosts: NewsPost[] = [
     date: "2026-06-24",
     readMinutes: 3,
     image: img("photo-1531482615713-2afd69097998", 1200),
-    imageAlt: "Students presenting projects at a technology exhibition",
+    imageAlt: GENERIC_ALT,
     featured: true,
     body: [
       "Students who took part in the first cohort of the Telecel Ghana Foundation's Ashanti Codes programme exhibited their finished projects in Wiamoase and Obuasi, bringing together facilitators and members of the media to see what weeks of hands-on training had produced.",
@@ -80,7 +82,7 @@ export const newsPosts: NewsPost[] = [
     date: "2025-01-25",
     readMinutes: 3,
     image: img("photo-1581092160562-40aa08e78837", 1200),
-    imageAlt: "Engineering equipment on a workbench in a technology lab",
+    imageAlt: GENERIC_ALT,
     body: [
       "The MTN Ghana Foundation has formally handed over a modern integrated STEM laboratory at Wiamoase, describing it as the first of its kind in the Ashanti Region. The facility gives students and teachers hands-on experience in robotics, programming and electronics.",
       "The Foundation supported the project with GHS 746,425 to furnish the lab. The equipment list covers the full STEM stack: LEGO Education, including SPIKE Essential units for hands-on investigation of STEM concepts; REV Robot kits with more than 1,400 parts each; drone technology; virtual reality sets; programming in Scratch, Java and Python; and science research resources.",
@@ -108,8 +110,8 @@ export const newsPosts: NewsPost[] = [
     category: "Skills",
     date: "2025-03-25",
     readMinutes: 2,
-    image: img("photo-1524178232363-1fb2b075b655", 1200),
-    imageAlt: "A trainer demonstrating a practical skill to a group",
+    image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791470514/cc_xe6eut.jpg",
+    imageAlt: GENERIC_ALT,
     body: [
       "The Technology Consultancy Center at International Centre for Innovation, Manufacturing, Technology Transfer and Entrepreneurship, based at KNUST, trained 40 members of the Wiamoase community in soap making.",
       "The session was organised as part of World Engineering Day celebrations, and covered the production of both bar and liquid soaps. It is part of TCC-CIMET's stated commitment to empowering local communities through skills development, technology transfer and sustainable economic initiatives.",
@@ -135,7 +137,7 @@ export const newsPosts: NewsPost[] = [
     date: "2025-04-15",
     readMinutes: 2,
     image: img("photo-1517457373958-b7bdd4587205", 1200),
-    imageAlt: "A group of community members gathered together",
+    imageAlt: GENERIC_ALT,
     body: [
       "Wiamoase Diaspora Welfare Plan is registered as a federal corporation in Regina, Saskatchewan, according to the Corporations Canada register. The entity was incorporated on 15 April 2025 under the Canada Not-for-profit Corporations Act, with corporation number 16917411.",
       "Its registered office is listed at an address on Green Bluebell Road in Regina, and the record carries Business Number 766551964.",
@@ -156,7 +158,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-11-26",
     readMinutes: 3,
     image: img("photo-1540575467063-178a50c2df87", 1200),
-    imageAlt: "Attendees gathered at a commissioning ceremony",
+    imageAlt: GENERIC_ALT,
     body: [
       "The MTN Ghana Foundation commissioned the Robotics and ICT Centre at the Wiamoase Diaspora Public Library on Tuesday 26 November 2024, equipping it with robotics equipment, laptops, desktop computers and AI tools for learning and training.",
       "The library has designated the centre as a gateway for STEM education: a place where students can acquire practical technical skills, solve real-world problems creatively, and prepare for future work. The foundation also noted that the centre supports local entrepreneurs in developing digital business strategies and offers collaborative workspace for students and professionals.",
@@ -189,7 +191,7 @@ export const newsPosts: NewsPost[] = [
     date: "2022-04-19",
     readMinutes: 4,
     image: img("photo-1511795409834-ef04bbd61622", 1200),
-    imageAlt: "A large conference hall set up for an inauguration gathering",
+    imageAlt: GENERIC_ALT,
     body: [
       "A $500,000 complex built by Wiamoase citizens living abroad was inaugurated in April 2022, funded entirely from the voluntary contributions of members. The two-storey Learning Development Centre comprises a well-furnished conference centre, a community library with offices and relevant books, and a standby regular water supply system.",
       "The citizens of the town formed a union not only for solidarity and socialising, but to pool resources for socio-economic development projects at home. The inauguration was marked by a durbar of the chiefs and people of Wiamoase attended by government functionaries, academics and clergy.",

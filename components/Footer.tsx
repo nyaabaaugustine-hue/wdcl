@@ -24,13 +24,8 @@ export default function Footer() {
               <a href="/volunteer" className="btn btn-outline btn-sm" data-dialog="volunteer">
                 Become a Volunteer
               </a>
-              <a
-                href="/#visit"
-                className="btn btn-outline btn-sm"
-                data-dialog="visit"
-                data-topic="Donations & partnerships"
-              >
-                Donate Now
+              <a href="/donate" className="btn btn-outline btn-sm">
+                Support the centre
               </a>
               <a href="/#visit" className="btn btn-outline btn-sm" data-dialog="visit">
                 Visit
@@ -50,7 +45,9 @@ export default function Footer() {
             <a href="/#story">Our story</a>
             <a href="/clubs">Clubs</a>
             <a href="/programs">Our Programs</a>
+            <a href="/join">Join a club</a>
             <a href="/gallery">Gallery</a>
+            <a href="/faq">FAQ</a>
           </nav>
           <nav aria-label="Get involved">
             <h2>Get involved</h2>
@@ -58,6 +55,8 @@ export default function Footer() {
             <a href="/sponsors">Sponsors</a>
             <a href="/partners">Partners</a>
             <a href="/volunteer">Volunteer</a>
+            <a href="/donate">Support the centre</a>
+            <a href="/hire">Hire the hall</a>
           </nav>
           <nav aria-label="Connect">
             <h2>Connect</h2>
@@ -68,6 +67,7 @@ export default function Footer() {
               Facebook
             </a>
             <a href="/privacy">Privacy</a>
+            <a href="/accessibility">Accessibility</a>
           </nav>
         </div>
         <div className="legal">

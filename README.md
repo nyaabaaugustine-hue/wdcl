@@ -39,5 +39,5 @@ lib/data.ts       all content: edit text, clubs, times and facts here
 
 - Club days, times, venues and programmes in `lib/data.ts` are proposals, not published by the library.
 - Opening hours, phone and email are marked "To be confirmed / To be added" in `components/Visit.tsx`.
-- The contact form does not send anything yet. Connect it in `Visit.tsx` (`onSubmit`) to an API route or email service.
+- Forms (contact, dialogs, newsletter) post to `app/api/contact/route.ts`, which emails the library team through Resend. Copy `.env.example` to `.env.local` and set `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`. Until they are set, visitors see a friendly "sending isn't switched on yet" message and nothing is sent.
 - Verify the ~US$500,000 cost and the April 2022 inauguration date with the library.

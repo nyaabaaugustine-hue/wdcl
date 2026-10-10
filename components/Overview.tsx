@@ -1,5 +1,11 @@
 import Icon from "./Icon";
+import Photo from "./Photo";
 import { glance, MAP_URL } from "@/lib/data";
+
+const DIRECTOR_PORTRAIT = {
+  src: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791467278/steven_rimqjb.jpg",
+  alt: "Portrait of Mr Stephen Adu, Library Director",
+};
 
 export default function Overview() {
   return (
@@ -11,7 +17,7 @@ export default function Overview() {
             <i />
             <i />
           </div>
-          <p className="eyebrow">I · Overview</p>
+          <p className="eyebrow">Overview</p>
           <h2>The Wiamoase Diaspora Public Library</h2>
           <p className="muted">
             A community library, learning centre and STEM hub for Wiamoase and the surrounding communities.
@@ -73,6 +79,18 @@ export default function Overview() {
                 <i />
                 <i />
                 <i />
+              </div>
+              <div className="glance-director">
+                <Photo
+                  src={DIRECTOR_PORTRAIT.src}
+                  alt={DIRECTOR_PORTRAIT.alt}
+                  ratio="1-1"
+                  sizes="72px"
+                />
+                <p className="glance-director-cap">
+                  <span className="glance-director-name">Mr Stephen Adu</span>
+                  <span className="glance-director-role">Library Director</span>
+                </p>
               </div>
               <div className="card-header">
                 <h3 className="card-title">At a glance</h3>

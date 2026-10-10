@@ -7,7 +7,7 @@ export default function HappeningNow() {
       <div className="container">
         <div className="heading happen-heading">
           <p className="eyebrow">Happening now</p>
-          <h2 id="happen-h">Fresh news and a look around.</h2>
+          <h2 id="happen-h">News from the centre, and a look around.</h2>
         </div>
         <NewsStrip />
         <GalleryStrip />

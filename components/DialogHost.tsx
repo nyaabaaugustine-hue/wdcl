@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 import { clubs, topics, volunteerRoles } from "@/lib/data";
+import { submitForm } from "@/lib/submitForm";
 
 type DialogKind = "visit" | "join" | "volunteer";
 
@@ -44,6 +45,8 @@ function DialogForm({
   onClose: () => void;
 }) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
   const [who, setWho] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [topicValue, setTopicValue] = useState(
@@ -61,8 +64,9 @@ function DialogForm({
         ? volunteerRoles.map((r) => r.title)
         : [...topics];
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (sending) return;
     const form = e.currentTarget;
     const fd = new FormData(form);
 
@@ -83,6 +87,7 @@ function DialogForm({
     if (kind === "visit" && !message) next.message = "Please write a message.";
 
     setErrors(next);
+    setSendError("");
     if (Object.keys(next).length > 0) {
       requestAnimationFrame(() =>
         form.querySelector<HTMLElement>("[aria-invalid='true']")?.focus(),
@@ -90,10 +95,16 @@ function DialogForm({
       return;
     }
 
-    // TODO: connect to an API route, email service or form provider.
-    setWho(name.split(" ")[0]);
-    setSent(true);
-    form.reset();
+    setSending(true);
+    const result = await submitForm({ kind, name, email, topic: topicValue, message });
+    setSending(false);
+
+    if (result.ok) {
+      setWho(name.split(" ")[0]);
+      setSent(true);
+    } else {
+      setSendError(result.message);
+    }
   }
 
   const errId = (k: keyof FieldErrors) => `derr-${k}`;
@@ -110,12 +121,11 @@ function DialogForm({
           </h3>
           <p className="muted">
             {kind === "join"
-              ? "Your registration of interest is noted."
+              ? "Your registration of interest has been sent to the library team."
               : kind === "volunteer"
-                ? "Your offer to help is noted."
-                : "Your visit request is noted."}{" "}
-            This form is not connected to a mailbox yet, so nothing was actually sent — the team will wire it up
-            before launch.
+                ? "Your offer to help has been sent to the library team."
+                : "Your visit request has been sent to the library team."}{" "}
+            They will reply to the email address you gave.
           </p>
           <p className="dlg-done-fine muted">
             We only use your details to reply — see the{" "}
@@ -227,9 +237,14 @@ function DialogForm({
           <input id="d-website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
 
-        <button className="btn btn-default btn-block" type="submit">
-          {meta.submit}
+        <button className="btn btn-default btn-block" type="submit" disabled={sending} aria-busy={sending}>
+          {sending ? "Sending…" : meta.submit}
         </button>
+        {sendError && (
+          <p role="alert" className="form-error">
+            {sendError}
+          </p>
+        )}
       </div>
     </form>
   );

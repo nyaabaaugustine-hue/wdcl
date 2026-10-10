@@ -5,10 +5,13 @@ type IconName =
   | "code"
   | "moon"
   | "menu"
+  | "close"
   | "check"
   | "heart"
   | "sun"
   | "facebook"
+  | "linkedin"
+  | "instagram"
   | "pin"
   | "clock"
   | "mail"
@@ -66,6 +69,12 @@ export default function Icon({ name, size }: Props) {
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       );
+    case "close":
+      return (
+        <svg {...common}>
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      );
     case "check":
       return (
         <svg {...common}>
@@ -89,6 +98,22 @@ export default function Icon({ name, size }: Props) {
       return (
         <svg {...common}>
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      );
+    case "linkedin":
+      return (
+        <svg {...common}>
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z" />
+          <rect x="2" y="9" width="4" height="12" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg {...common}>
+          <rect x="2" y="2" width="20" height="20" rx="5" />
+          <path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4Z" />
+          <path d="M17.5 6.5h.01" />
         </svg>
       );
     case "pin":

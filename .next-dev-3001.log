@@ -1,0 +1,1172 @@
+   ▲ Next.js 15.5.27
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.71.7:3001
+
+ ✓ Starting...
+ ✓ Ready in 24.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 45.1s (810 modules)
+ GET / 200 in 49648ms
+ GET / 200 in 64024ms
+ ⨯ upstream image response timed out for https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791459258/stephen_lvnqhv.avif
+ GET / 200 in 1226ms
+ ○ Compiling /news/[slug] ...
+ ✓ Compiled /news/[slug] in 5.7s (798 modules)
+ GET /news/tcc-cimet-soap-making-training 200 in 19707ms
+ GET /news/tcc-cimet-soap-making-training 200 in 16433ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 2.3s (817 modules)
+ GET /manifest.webmanifest 200 in 3187ms
+ GET / 200 in 616ms
+ GET /manifest.webmanifest 200 in 576ms
+ ○ Compiling /programs ...
+ ✓ Compiled /programs in 6.3s (826 modules)
+ GET /manifest.webmanifest 200 in 187ms
+ GET / 200 in 1430ms
+ GET / 200 in 694ms
+ GET / 200 in 1944ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 1529ms (812 modules)
+ GET /about 200 in 2204ms
+ GET /about 200 in 181ms
+ ✓ Compiled /manifest.webmanifest in 484ms (562 modules)
+ GET /manifest.webmanifest 200 in 702ms
+ GET / 200 in 1158ms
+ GET /about 200 in 1172ms
+ GET /about 200 in 1220ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 2.5s (820 modules)
+ GET /gallery 200 in 2919ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 1567ms (568 modules)
+ GET /manifest.webmanifest 200 in 2397ms
+ GET / 200 in 2435ms
+ GET /manifest.webmanifest 200 in 54ms
+ ✓ Compiled in 2.3s (549 modules)
+ GET /news/tcc-cimet-soap-making-training 200 in 1465ms
+ GET / 200 in 352ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 1490ms (549 modules)
+ ✓ Compiled in 1ms (568 modules)
+ GET /manifest.webmanifest 200 in 4272ms
+ GET /manifest.webmanifest 200 in 259ms
+ GET /news/tcc-cimet-soap-making-training 200 in 3122ms
+ GET / 200 in 2723ms
+ GET /manifest.webmanifest 200 in 58ms
+ GET /manifest.webmanifest 200 in 57ms
+ ✓ Compiled in 1289ms (568 modules)
+ GET /news/tcc-cimet-soap-making-training 200 in 1173ms
+ GET / 200 in 1239ms
+ GET /manifest.webmanifest 200 in 453ms
+ GET /manifest.webmanifest 200 in 56ms
+ ✓ Compiled in 832ms (568 modules)
+ ✓ Compiled in 921ms (568 modules)
+ ✓ Compiled in 963ms (568 modules)
+ ✓ Compiled in 2ms (568 modules)
+ GET /news/tcc-cimet-soap-making-training 200 in 4000ms
+ GET / 200 in 4053ms
+ GET /news/tcc-cimet-soap-making-training 200 in 684ms
+ GET / 200 in 467ms
+ GET /news/tcc-cimet-soap-making-training 200 in 615ms
+ GET / 200 in 441ms
+ GET /news/tcc-cimet-soap-making-training 200 in 608ms
+ GET / 200 in 416ms
+ ✓ Compiled in 4.5s (853 modules)
+ GET /manifest.webmanifest 200 in 4100ms
+ GET /manifest.webmanifest 200 in 396ms
+ GET /news/tcc-cimet-soap-making-training 200 in 710ms
+ GET / 200 in 831ms
+ GET /manifest.webmanifest 200 in 51ms
+ GET /manifest.webmanifest 200 in 38ms
+ ✓ Compiled in 2.7s (853 modules)
+ GET /news/tcc-cimet-soap-making-training 200 in 936ms
+ GET / 200 in 959ms
+ GET /manifest.webmanifest 200 in 94ms
+ GET /manifest.webmanifest 200 in 50ms
+ GET / 200 in 1107ms
+ GET / 200 in 693ms
+ GET /about 200 in 894ms
+ GET / 200 in 757ms
+ GET / 200 in 752ms
+ GET / 200 in 3472ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 4.6s (566 modules)
+ GET /icon.svg?14bd9371e9157884 200 in 5302ms
+ GET / 200 in 3887ms
+ GET / 200 in 1468ms
+ GET /icon.svg?14bd9371e9157884 200 in 74ms
+ GET / 200 in 1395ms
+ GET /about 200 in 2126ms
+ GET /about 200 in 1586ms
+ GET / 200 in 2114ms
+ GET / 200 in 3060ms
+ GET / 200 in 1165ms
+ GET / 200 in 1851ms
+ ✓ Compiled in 6.8s (820 modules)
+ GET / 200 in 644ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 1082ms (568 modules)
+ GET /manifest.webmanifest 200 in 1848ms
+ ✓ Compiled in 932ms (568 modules)
+ GET / 200 in 494ms
+ GET /manifest.webmanifest 200 in 73ms
+ ✓ Compiled in 4.5s (820 modules)
+ GET / 200 in 687ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 888ms (568 modules)
+ GET /manifest.webmanifest 200 in 1218ms
+ ✓ Compiled in 1868ms (839 modules)
+ GET / 200 in 465ms
+ GET /manifest.webmanifest 200 in 76ms
+ ✓ Compiled in 2s (839 modules)
+ GET / 200 in 836ms
+ GET /manifest.webmanifest 200 in 70ms
+ ✓ Compiled in 2.1s (839 modules)
+ GET / 200 in 437ms
+ GET /manifest.webmanifest 200 in 72ms
+ ✓ Compiled in 2.5s (839 modules)
+ GET / 200 in 456ms
+ GET /manifest.webmanifest 200 in 80ms
+ ✓ Compiled in 1429ms (568 modules)
+ GET / 200 in 408ms
+ GET /manifest.webmanifest 200 in 59ms
+ ✓ Compiled in 1945ms (569 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 200 in 2286ms
+ ✓ Compiled in 3.1s (835 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 500 in 4166ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 500 in 2661ms
+ ○ Compiling /sponsors ...
+ ✓ Compiled /sponsors in 4s (825 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /sponsors 500 in 6616ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 500 in 2985ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /sponsors 500 in 4237ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 500 in 2516ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /sponsors 500 in 2240ms
+ ○ Compiling /volunteer ...
+ ✓ Compiled /volunteer in 3.5s (827 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /volunteer 500 in 7027ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /gallery 500 in 2016ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ○ Compiling /news ...
+ GET / 500 in 4933ms
+ ✓ Compiled /news in 7.4s (835 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /news 500 in 11696ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 5.4s (844 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET /clubs/reading 500 in 16245ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button type="button" className=... style=... aria-disabled=... aria-label=... title=... onClick={function onClick} children=...>
+                                                                                                   ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '610115009'
+}
+ GET / 500 in 2118ms
+ ✓ Compiled in 1944ms (563 modules)
+ GET / 200 in 1873ms
+ GET / 200 in 1419ms
+ ○ Compiling /sponsors ...
+ ✓ Compiled /sponsors in 2.1s (554 modules)
+ GET /sponsors 200 in 2868ms
+ ○ Compiling /volunteer ...
+ ✓ Compiled /volunteer in 803ms (556 modules)
+ GET /volunteer 200 in 1640ms
+ GET / 200 in 2595ms
+ GET /gallery 200 in 543ms
+ ○ Compiling /news ...
+ ✓ Compiled /news in 903ms (562 modules)
+ GET / 200 in 1245ms
+ GET /news 200 in 1938ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /manifest.webmanifest in 1157ms (569 modules)
+ ✓ Compiled (588 modules)
+ GET /manifest.webmanifest 200 in 2984ms
+ GET /clubs/reading 200 in 5015ms
+ GET /news/tcc-cimet-soap-making-training 200 in 962ms
+ GET / 200 in 1828ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 3.9s (567 modules)
+ GET /icon.svg?14bd9371e9157884 200 in 4824ms
+ GET / 200 in 3697ms
+ GET / 200 in 1851ms
+ ○ Compiling /sponsors ...
+ ✓ Compiled /sponsors in 1964ms (554 modules)
+ GET /sponsors 200 in 4168ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 5.6s (573 modules)
+ GET /manifest.webmanifest 200 in 6636ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 993ms (575 modules)
+ GET /icon.svg 200 in 1280ms
+ GET /gallery 200 in 1039ms
+ GET /manifest.webmanifest 200 in 356ms
+ GET /icon.svg 200 in 85ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 4.3s (582 modules)
+ GET /clubs/reading 200 in 5605ms
+ GET /manifest.webmanifest 200 in 204ms
+ GET /icon.svg 200 in 75ms
+ ○ Compiling /news ...
+ ✓ Compiled /news in 2s (588 modules)
+ GET /news 200 in 3718ms
+[Error [TimeoutError]: The operation was aborted due to timeout] {
+  code: 23,
+  INDEX_SIZE_ERR: 1,
+  DOMSTRING_SIZE_ERR: 2,
+  HIERARCHY_REQUEST_ERR: 3,
+  WRONG_DOCUMENT_ERR: 4,
+  INVALID_CHARACTER_ERR: 5,
+  NO_DATA_ALLOWED_ERR: 6,
+  NO_MODIFICATION_ALLOWED_ERR: 7,
+  NOT_FOUND_ERR: 8,
+  NOT_SUPPORTED_ERR: 9,
+  INUSE_ATTRIBUTE_ERR: 10,
+  INVALID_STATE_ERR: 11,
+  SYNTAX_ERR: 12,
+  INVALID_MODIFICATION_ERR: 13,
+  NAMESPACE_ERR: 14,
+  INVALID_ACCESS_ERR: 15,
+  VALIDATION_ERR: 16,
+  TYPE_MISMATCH_ERR: 17,
+  SECURITY_ERR: 18,
+  NETWORK_ERR: 19,
+  ABORT_ERR: 20,
+  URL_MISMATCH_ERR: 21,
+  QUOTA_EXCEEDED_ERR: 22,
+  TIMEOUT_ERR: 23,
+  INVALID_NODE_TYPE_ERR: 24,
+  DATA_CLONE_ERR: 25
+}
+ ⨯ upstream image response timed out for https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791470514/cc_xe6eut.jpg
+ ○ Compiling /_error ...
+ ✓ Compiled /news/[slug] in 24s (1213 modules)
+ ✓ Compiled (1221 modules)
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1495446815901-a7297e633e8d%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1600%26q%3D85&w=1600&q=75 500 in 44944ms
+ GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1495446815901-a7297e633e8d%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1600%26q%3D85&w=1600&q=75 500 in 37823ms
+ GET /news 200 in 20504ms
+ GET /news/tcc-cimet-soap-making-training 200 in 20651ms
+ GET / 200 in 24217ms
+ GET / 200 in 624ms
+ GET /manifest.webmanifest 200 in 81ms
+ ○ Compiling /volunteer ...
+ ✓ Compiled /volunteer in 3s (795 modules)
+ GET /manifest.webmanifest 200 in 417ms
+ GET /volunteer 200 in 5332ms
+ GET /icon.svg 200 in 135ms
+ GET /manifest.webmanifest 200 in 331ms
+ GET /sponsors 200 in 1118ms
+ GET /icon.svg 200 in 68ms
+ GET /manifest.webmanifest 200 in 284ms
+ GET /gallery 200 in 892ms
+ GET /icon.svg 200 in 74ms
+ GET /manifest.webmanifest 200 in 376ms
+ GET /clubs/reading 200 in 1566ms
+ GET /icon.svg 200 in 98ms
+ GET /news 200 in 1290ms
+ GET /news/tcc-cimet-soap-making-training 200 in 1232ms
+ GET /manifest.webmanifest 200 in 248ms
+ GET /volunteer 200 in 1000ms
+ GET /icon.svg 200 in 66ms
+ GET /manifest.webmanifest 200 in 368ms
+ GET /sponsors 200 in 1181ms
+ GET /icon.svg 200 in 83ms
+ GET /manifest.webmanifest 200 in 301ms
+ GET /volunteer 200 in 1000ms
+ GET /icon.svg 200 in 44ms
+ GET /manifest.webmanifest 200 in 269ms
+ GET /volunteer 200 in 1053ms
+ GET /icon.svg 200 in 60ms
+ GET /manifest.webmanifest 200 in 271ms
+ GET /volunteer 200 in 1080ms
+ GET /icon.svg 200 in 118ms
+ GET /manifest.webmanifest 200 in 474ms
+ GET /sponsors 200 in 1681ms
+ GET /icon.svg 200 in 670ms
+ GET / 200 in 3895ms
+ GET /manifest.webmanifest 200 in 167ms
+ GET /volunteer 200 in 1294ms
+ GET /icon.svg 200 in 46ms
+ GET /manifest.webmanifest 200 in 155ms
+ GET /sponsors 200 in 1113ms
+ GET /icon.svg 200 in 64ms
+ GET /news 200 in 535ms
+ GET /manifest.webmanifest 200 in 90ms
+ GET /gallery 200 in 536ms
+ GET /icon.svg 200 in 40ms
+ ✓ Compiled in 2.9s (1105 modules)
+ GET /gallery 200 in 573ms
+ GET / 200 in 600ms
+ GET /manifest.webmanifest 200 in 144ms
+ GET /icon.svg 200 in 114ms
+ GET /manifest.webmanifest 200 in 29ms
+ ✓ Compiled in 1369ms (1105 modules)
+ GET /gallery 200 in 649ms
+ GET / 200 in 691ms
+ GET /manifest.webmanifest 200 in 91ms
+ GET /icon.svg 200 in 40ms
+ GET /manifest.webmanifest 200 in 32ms
+ GET /manifest.webmanifest 200 in 134ms
+ GET /volunteer 200 in 925ms
+ GET /icon.svg 200 in 115ms
+ GET / 200 in 2329ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 6.5s (672 modules)
+ GET /about 200 in 9321ms
+ GET / 200 in 2732ms
+ GET /manifest.webmanifest 200 in 113ms
+ ○ Compiling /programs ...
+ ✓ Compiled /programs in 1576ms (673 modules)
+ GET /about 200 in 1103ms
+ GET /manifest.webmanifest 200 in 692ms
+ GET /programs 200 in 3810ms
+ GET / 200 in 2152ms
+ GET /manifest.webmanifest 200 in 49ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 883ms (675 modules)
+ GET /icon.svg 200 in 1050ms
+ ○ Compiling /clubs ...
+ ✓ Compiled /clubs in 6.6s (1104 modules)
+ GET /manifest.webmanifest 200 in 431ms
+ GET /clubs 200 in 9807ms
+ GET /icon.svg 200 in 113ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 5.9s (691 modules)
+ GET /manifest.webmanifest 200 in 1065ms
+ GET /clubs/coding 200 in 9486ms
+ GET / 200 in 3545ms
+ GET /manifest.webmanifest 200 in 53ms
+ GET /icon.svg 200 in 150ms
+ GET /manifest.webmanifest 200 in 414ms
+ GET /clubs/robotics 200 in 1466ms
+ GET /icon.svg 200 in 58ms
+ GET /manifest.webmanifest 200 in 400ms
+ GET /clubs/reading 200 in 1437ms
+ GET /icon.svg 200 in 65ms
+ GET /manifest.webmanifest 200 in 336ms
+ GET /gallery 200 in 1072ms
+ GET /icon.svg 200 in 135ms
+ GET /news 200 in 1233ms
+ ○ Compiling /news/[slug] ...
+ ✓ Compiled /news/[slug] in 1578ms (699 modules)
+ GET /news/telecel-ashanti-codes-exhibition 200 in 5005ms
+ GET / 200 in 3143ms
+ GET /manifest.webmanifest 200 in 104ms
+ GET /news/tcc-cimet-soap-making-training 200 in 1414ms
+ GET /manifest.webmanifest 200 in 370ms
+ GET /sponsors 200 in 1437ms
+ GET /icon.svg 200 in 68ms
+ ○ Compiling /partners ...
+ ✓ Compiled /partners in 3s (1126 modules)
+ GET /manifest.webmanifest 200 in 456ms
+ GET /partners 200 in 4850ms
+ GET /icon.svg 200 in 81ms
+ ○ Compiling /volunteer ...
+ ✓ Compiled /volunteer in 2.8s (691 modules)
+ GET /manifest.webmanifest 200 in 285ms
+ GET /volunteer 200 in 4322ms
+ GET /icon.svg 200 in 86ms
+ ○ Compiling /visit ...
+ ✓ Compiled /visit in 4.5s (1123 modules)
+ GET /visit 200 in 10501ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 3.8s (1122 modules)
+ GET /contact 200 in 5891ms
+ ○ Compiling /privacy ...
+ ✓ Compiled /privacy in 2.6s (1121 modules)
+ GET /manifest.webmanifest 200 in 384ms
+ GET /privacy 200 in 4455ms
+ GET /icon.svg 200 in 67ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 1344ms (683 modules)
+ GET /manifest.webmanifest 200 in 498ms
+ GET /clubs/robotics 200 in 3217ms
+ GET /icon.svg 200 in 86ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 3s (691 modules)
+ GET /about 200 in 5329ms
+ GET /manifest.webmanifest 200 in 463ms
+ GET /clubs/reading 200 in 1676ms
+ GET /icon.svg 200 in 356ms
+ GET / 200 in 2049ms
+ GET /manifest.webmanifest 200 in 280ms
+ GET /volunteer 200 in 1130ms
+ GET /icon.svg 200 in 50ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 2.5s (686 modules)
+ GET /manifest.webmanifest 200 in 427ms
+ GET /gallery 200 in 4357ms
+ GET /icon.svg 200 in 82ms
+ ○ Compiling /news ...
+ ✓ Compiled /news in 1350ms (689 modules)
+ GET /news 200 in 3334ms
+ ○ Compiling /sponsors ...
+ ✓ Compiled /sponsors in 2.8s (691 modules)
+ GET /manifest.webmanifest 200 in 669ms
+ GET /sponsors 200 in 4756ms
+ GET /icon.svg 200 in 81ms
+ GET /manifest.webmanifest 200 in 236ms
+ GET /volunteer 200 in 1367ms
+ GET /icon.svg 200 in 56ms
+ GET / 200 in 953ms
+ GET /about 200 in 556ms
+ ○ Compiling /programs ...
+ ✓ Compiled /programs in 4.5s (648 modules)
+ GET /programs 200 in 5793ms
+ ○ Compiling /clubs ...
+ ✓ Compiled /clubs in 1014ms (650 modules)
+ GET /clubs 200 in 2146ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 1267ms (664 modules)
+ GET /clubs/coding 200 in 2616ms
+ GET /clubs/robotics 200 in 660ms
+ GET /clubs/reading 200 in 514ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 1342ms (670 modules)
+ GET /gallery 200 in 2457ms
+ GET /news 200 in 571ms
+ ○ Compiling /news/[slug] ...
+ ✓ Compiled /news/[slug] in 6.3s (678 modules)
+ GET /news/telecel-ashanti-codes-exhibition 200 in 7542ms
+ GET /news/tcc-cimet-soap-making-training 200 in 524ms
+ GET /news/mtn-integrated-stem-lab-handover 200 in 600ms
+ GET /news/wiamoase-diaspora-welfare-plan-canada 200 in 618ms
+ GET /sponsors 200 in 427ms
+ ○ Compiling /partners ...
+ ✓ Compiled /partners in 1480ms (680 modules)
+ GET /partners 200 in 2219ms
+ GET /volunteer 200 in 413ms
+ ○ Compiling /visit ...
+ ✓ Compiled /visit in 1521ms (684 modules)
+ GET /visit 200 in 2367ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 1615ms (688 modules)
+ GET /contact 200 in 2459ms
+ ○ Compiling /privacy ...
+ ✓ Compiled /privacy in 1597ms (692 modules)
+ GET /privacy 200 in 2328ms
+ GET / 200 in 2451ms
+ GET /news/tcc-cimet-soap-making-training 200 in 1470ms
+ GET /gallery 200 in 1030ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 7.4s (686 modules)
+ GET /manifest.webmanifest 200 in 8025ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 2.8s (688 modules)
+ GET /icon.svg 200 in 3428ms
+ GET /news/tcc-cimet-soap-making-training 200 in 2128ms
+ GET /manifest.webmanifest 200 in 353ms
+ GET /gallery 200 in 1005ms
+ GET /icon.svg 200 in 96ms
+ GET /manifest.webmanifest 200 in 413ms
+ GET /volunteer 200 in 1079ms
+ GET /icon.svg 200 in 50ms
+ GET /manifest.webmanifest 200 in 473ms
+ GET /sponsors 200 in 1633ms
+ GET /icon.svg 200 in 106ms
+ GET / 200 in 741ms
+ GET /gallery 200 in 424ms
+ GET /manifest.webmanifest 200 in 100ms
+ GET / 200 in 1117ms
+ GET /manifest.webmanifest 200 in 386ms
+ GET / 200 in 2565ms
+ GET / 200 in 488ms
+ GET / 200 in 586ms
+ GET /icon.svg?14bd9371e9157884 200 in 67ms
+ GET / 200 in 2244ms
+ GET /icon.svg?14bd9371e9157884 200 in 1533ms
+ GET / 200 in 9389ms
+ GET /icon.svg?14bd9371e9157884 200 in 3272ms
+ ✓ Compiled in 74.6s (1097 modules)
+ GET /sponsors 200 in 1118ms
+ GET / 200 in 22761ms
+ GET / 200 in 22658ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 20.5s (672 modules)
+ GET /manifest.webmanifest 200 in 20683ms
+ GET /manifest.webmanifest 200 in 29374ms
+ GET /manifest.webmanifest 200 in 26ms
+ ○ Compiling /icon.svg ...
+ ✓ Compiled /icon.svg in 2.9s (674 modules)
+ GET /icon.svg 200 in 3699ms
+ GET /icon.svg 200 in 3657ms
+ GET /icon.svg 200 in 3700ms
+ GET / 200 in 5355ms
+ GET / 200 in 7180ms
+ ✓ Compiled in 34.7s (1189 modules)
+ GET / 200 in 5585ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 11.9s (742 modules)
+ GET /manifest.webmanifest 200 in 12818ms
+ GET / 200 in 407ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 6.6s (1208 modules)
+ GET /manifest.webmanifest 200 in 1314ms
+ GET / 200 in 591ms
+ GET /manifest.webmanifest 200 in 25ms
+ GET / 200 in 461ms
+ ✓ Compiled in 7.2s (1208 modules)
+ ✓ Compiled in 7s (1208 modules)
+ ✓ Compiled in 17.4s (1222 modules)
+ ✓ Compiled in 785ms (723 modules)
+ ✓ Compiled in 4.3s (1203 modules)
+ GET / 200 in 19840ms
+ GET / 200 in 1630ms
+ ✓ Compiled in 8.2s (1189 modules)
+ GET / 200 in 3026ms
+ ✓ Compiled in 3.6s (1191 modules)
+ ○ Compiling /manifest.webmanifest ...
+ GET / 200 in 1747ms
+ ✓ Compiled /manifest.webmanifest in 6.1s (1207 modules)
+ GET /manifest.webmanifest 200 in 6944ms
+ GET / 200 in 855ms
+ GET /manifest.webmanifest 200 in 25ms
+ ✓ Compiled in 3.4s (1221 modules)
+ GET / 200 in 557ms
+ GET /manifest.webmanifest 200 in 63ms
+ ✓ Compiled in 2.8s (1207 modules)
+ GET / 200 in 470ms
+ GET /manifest.webmanifest 200 in 52ms
+ GET / 200 in 5844ms
+ ✓ Compiled in 6.8s (1188 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /news/telecel-ashanti-codes-exhibition 200 in 6038ms
+ GET /news/telecel-ashanti-codes-exhibition 200 in 251ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 1172ms (741 modules)
+ ○ Compiling /faq ...
+ ✓ Compiled /join in 8.2s (1229 modules)
+ ✓ Compiled in 8.2s (1226 modules)
+ GET /manifest.webmanifest 200 in 27644ms
+ GET /manifest.webmanifest 200 in 268ms
+ GET /manifest.webmanifest 200 in 122ms
+ GET /faq 200 in 27883ms
+ GET /manifest.webmanifest 200 in 221ms
+ GET /join 200 in 23282ms
+ GET /manifest.webmanifest 200 in 135ms
+ GET /programs 200 in 28100ms
+ GET /clubs 200 in 24896ms
+ GET /manifest.webmanifest 200 in 275ms
+ GET /gallery 200 in 2047ms
+ GET /about 200 in 36779ms
+ GET / 200 in 33159ms
+ GET /sponsors 200 in 2111ms
+ ○ Compiling /news ...
+ ✓ Compiled /news in 13s (1238 modules)
+ GET /manifest.webmanifest 200 in 13905ms
+ GET /manifest.webmanifest 200 in 1046ms
+ GET /manifest.webmanifest 200 in 58ms
+ GET /news 200 in 15647ms
+ GET /hire 200 in 15681ms
+ GET /manifest.webmanifest 200 in 51ms
+ GET /donate 200 in 15746ms
+ GET /volunteer 200 in 16063ms
+ GET /partners 200 in 16093ms
+ ○ Compiling /contact ...
+ GET / 200 in 16139ms
+ ✓ Compiled /contact in 9.8s (1246 modules)
+ GET /manifest.webmanifest 200 in 10121ms
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3001". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET /contact 200 in 18017ms
+ GET /visit 200 in 18336ms
+ GET /news/telecel-ashanti-codes-exhibition 200 in 17811ms
+ GET / 200 in 17927ms
+ GET / 200 in 1266ms
+ GET / 200 in 1132ms
+ GET / 200 in 1334ms
+ GET / 200 in 471ms
+ GET /manifest.webmanifest 200 in 1233ms
+ ✓ Compiled in 9.9s (1232 modules)
+ GET / 200 in 941ms
+ ○ Compiling /donate ...
+ ✓ Compiled /donate in 18.8s (1232 modules)
+ GET /donate 200 in 19322ms
+ GET /donate 200 in 220ms
+ GET /manifest.webmanifest 200 in 362ms
+ ○ Compiling /programs ...
+ ✓ Compiled /clubs in 3s (755 modules)
+ ✓ Compiled /faq in 1ms (766 modules)
+ ✓ Compiled in 2ms (768 modules)
+ ✓ Compiled in 1ms (768 modules)
+ GET /join 200 in 12374ms
+ ✓ Compiled in 1ms (768 modules)
+ GET /clubs 200 in 24432ms
+ GET /programs 200 in 24432ms
+ GET /about 200 in 24420ms
+ GET /donate 200 in 17650ms
+ GET /faq 200 in 21199ms
+ GET /gallery 200 in 11630ms
+ ○ Compiling /sponsors ...
+ ✓ Compiled /sponsors in 2.1s (748 modules)
+ GET / 200 in 2897ms
+ ✓ Compiled in 1ms (750 modules)
+ ✓ Compiled in 1ms (750 modules)
+ ✓ Compiled in 2ms (750 modules)
+ GET /partners 200 in 43581ms
+ GET /join 200 in 41191ms
+ ✓ Compiled in 2ms (750 modules)
+ GET /manifest.webmanifest 200 in 33458ms
+ GET /visit 200 in 36027ms
+ GET /volunteer 200 in 37130ms
+ GET / 200 in 47067ms
+ GET /sponsors 200 in 47104ms
+ ✓ Compiled in 1ms (750 modules)
+ ✓ Compiled in 0ms (750 modules)
+ ✓ Compiled in 1ms (750 modules)
+ GET /gallery 200 in 12905ms
+ GET / 200 in 19700ms
+ GET /faq 200 in 7066ms
+ GET /programs 200 in 13290ms
+ GET /clubs 200 in 14530ms
+ GET /about 200 in 13434ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 2.2s (754 modules)
+ GET /contact 200 in 11850ms
+ GET /partners 200 in 11690ms
+ GET /volunteer 200 in 11767ms
+ GET /join 200 in 12145ms
+ GET / 200 in 15842ms
+ GET /gallery 200 in 3984ms
+ GET / 200 in 15458ms
+ GET /sponsors 200 in 4031ms
+ GET /faq 200 in 2550ms
+ GET /clubs 200 in 3840ms
+ GET /programs 200 in 403ms
+ GET /partners 200 in 587ms
+ GET /about 200 in 833ms
+ GET /gallery 200 in 1562ms
+ GET /volunteer 200 in 1834ms
+ GET /join 200 in 1885ms
+ GET /sponsors 200 in 1621ms
+ GET /faq 200 in 1810ms
+ GET / 200 in 3407ms
+ GET / 200 in 3416ms
+ GET /partners 200 in 1724ms
+ GET /clubs 200 in 1877ms
+ GET /programs 200 in 1803ms
+ GET /faq 200 in 1430ms
+ GET /join 200 in 5086ms
+ GET /sponsors 200 in 1819ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /about 200 in 8372ms
+ GET /programs 200 in 5661ms
+ GET /manifest.webmanifest 200 in 4715ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /manifest.webmanifest 200 in 189ms
+ GET /clubs 200 in 10428ms
+ GET /manifest.webmanifest 200 in 661ms
+ GET /join 200 in 7302ms
+ GET / 200 in 10649ms
+ GET /programs 200 in 8029ms
+ GET /manifest.webmanifest 200 in 860ms
+ GET /about 200 in 10765ms
+ GET /manifest.webmanifest 200 in 553ms
+ GET /clubs 200 in 4662ms
+ GET /faq 200 in 4022ms
+ ⨯ upstream image response timed out for https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791470514/cc_xe6eut.jpg
+ GET /contact 200 in 5610ms
+ GET /manifest.webmanifest 200 in 73ms
+ GET /manifest.webmanifest 200 in 319ms
+ ○ Compiling /clubs/[id] ...
+ ✓ Compiled /clubs/[id] in 10.3s (1215 modules)
+ GET /clubs/coding 200 in 15199ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling /manifest.webmanifest ...
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /partners 200 in 12254ms
+ GET /sponsors 200 in 12804ms
+ GET /donate 200 in 8222ms
+ ✓ Compiled /news in 3.9s (768 modules)
+ GET / 200 in 16331ms
+ ✓ Compiled in 4.3s (777 modules)
+ ✓ Compiled in 16.6s (1257 modules)
+ GET /manifest.webmanifest 200 in 47827ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /gallery 200 in 47018ms
+ GET /contact 200 in 45920ms
+ GET /volunteer 200 in 46533ms
+ ✓ Compiled in 4ms (777 modules)
+ ✓ Compiled (769 modules)
+ GET /manifest.webmanifest 200 in 36507ms
+ GET /manifest.webmanifest 200 in 38849ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /manifest.webmanifest 200 in 13734ms
+ GET /news 200 in 71887ms
+ GET /hire 200 in 71832ms
+ GET /manifest.webmanifest 200 in 1082ms
+ GET /clubs 200 in 18129ms
+ GET / 200 in 61234ms
+ GET / 200 in 18206ms
+ GET /about 200 in 18513ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 2.6s (755 modules)
+ ✓ Compiled (757 modules)
+ GET /manifest.webmanifest 200 in 5651ms
+ GET /contact 200 in 9019ms
+ GET /contact 200 in 9017ms
+ GET /faq 200 in 9624ms
+ GET /visit 200 in 9831ms
+ GET /contact 200 in 1141ms
+ GET / 200 in 10240ms
+ GET /about 200 in 10270ms
+ GET /contact 200 in 540ms
+ GET /faq 200 in 724ms
+ GET /visit 200 in 735ms
+ GET /contact 200 in 239ms
+ GET /faq 200 in 271ms
+ GET /about 200 in 1118ms
+ GET / 200 in 1095ms
+ GET /visit 200 in 442ms
+ GET /faq 200 in 454ms
+ GET /visit 200 in 506ms
+ GET /about 200 in 806ms
+ GET / 200 in 814ms
+ GET /manifest.webmanifest 200 in 57ms
+ GET /manifest.webmanifest 200 in 837ms
+ GET /manifest.webmanifest 200 in 85ms
+ GET /manifest.webmanifest 200 in 873ms
+ GET /manifest.webmanifest 200 in 116ms
+ GET /contact 200 in 2633ms
+ GET /contact 200 in 53ms
+ GET /manifest.webmanifest 200 in 55ms
+ ✓ Compiled in 9.4s (1218 modules)
+ GET /contact 200 in 979ms
+ GET /visit 200 in 1009ms
+ GET /faq 200 in 996ms
+ GET / 200 in 1365ms
+ GET / 200 in 1396ms
+ GET /about 200 in 1459ms
+ GET /hire 200 in 454ms
+ GET /sponsors 200 in 507ms
+ ○ Compiling /donate ...
+ ✓ Compiled /donate in 13.4s (1236 modules)
+ GET /contact 200 in 15576ms
+ GET /news 200 in 15607ms
+ GET /donate 200 in 16153ms
+ GET /partners 200 in 17258ms
+ GET /volunteer 200 in 17069ms
+ ✓ Compiled in 5.2s (1236 modules)
+ GET /partners 200 in 74846ms
+ GET /contact 200 in 5846ms
+ GET /news 200 in 5887ms
+ GET /donate 200 in 6197ms
+ GET /volunteer 200 in 6331ms
+ GET /partners 200 in 1276ms
+ GET /contact 200 in 796ms
+ GET /news 200 in 825ms
+ GET /donate 200 in 680ms
+ GET /volunteer 200 in 697ms
+ GET /manifest.webmanifest 200 in 1311ms
+ GET /manifest.webmanifest 200 in 52ms
+ GET /manifest.webmanifest 200 in 39ms
+ GET /manifest.webmanifest 200 in 38ms
+ GET /manifest.webmanifest 200 in 43ms
+ GET /contact 200 in 750ms
+ GET /sponsors 200 in 359ms
+ GET /manifest.webmanifest 200 in 98ms
+ GET /visit 200 in 404ms
+ GET /news 200 in 313ms
+ GET /donate 200 in 351ms
+ GET /manifest.webmanifest 200 in 67ms
+ GET /volunteer 200 in 344ms
+ GET /manifest.webmanifest 200 in 469ms
+ GET /partners 200 in 398ms
+ GET /manifest.webmanifest 200 in 290ms
+ GET / 200 in 242ms
+ GET /manifest.webmanifest 200 in 68ms
+ GET /faq 200 in 372ms
+ GET /manifest.webmanifest 200 in 135ms
+ GET /manifest.webmanifest 200 in 93ms
+ GET /visit 200 in 556ms
+ GET /manifest.webmanifest 200 in 199ms
+ GET /donate 200 in 488ms
+ GET /manifest.webmanifest 200 in 145ms
+ GET /partners 200 in 1418ms
+ GET /manifest.webmanifest 200 in 189ms
+ GET / 200 in 1398ms
+ GET / 200 in 622ms
+ GET /manifest.webmanifest 200 in 187ms
+ GET /contact 200 in 378ms
+ GET /manifest.webmanifest 200 in 254ms
+ GET /about 200 in 29301ms
+ GET / 200 in 1257ms
+ GET /manifest.webmanifest 200 in 312ms

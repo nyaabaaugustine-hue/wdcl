@@ -3,11 +3,14 @@
 import { FormEvent, useEffect, useState } from "react";
 import Icon from "./Icon";
 import { FACEBOOK_URL, MAP_URL, topics, ADDRESS, PLUS_CODE } from "@/lib/data";
+import { submitForm } from "@/lib/submitForm";
 
 type FieldErrors = { name?: string; email?: string; message?: string };
 
-export default function Visit({ photo }: { photo?: string }) {
+export default function Visit({ photo, showInfo = true }: { photo?: string; showInfo?: boolean }) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [copied, setCopied] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
@@ -32,8 +35,9 @@ export default function Visit({ photo }: { photo?: string }) {
     };
   }, []);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (sending) return;
     const form = e.currentTarget;
     const fd = new FormData(form);
 
@@ -54,6 +58,8 @@ export default function Visit({ photo }: { photo?: string }) {
     if (!message) next.message = "Please write a message.";
 
     setErrors(next);
+    setSendError("");
+    setSent(false);
     if (Object.keys(next).length > 0) {
       requestAnimationFrame(() =>
         form.querySelector<HTMLElement>("[aria-invalid='true']")?.focus(),
@@ -61,12 +67,19 @@ export default function Visit({ photo }: { photo?: string }) {
       return;
     }
 
-    // TODO: connect to an API route, email service or form provider.
-    setSent(true);
-    form.reset();
+    setSending(true);
+    const result = await submitForm({ kind: "contact", name, email, topic, message });
+    setSending(false);
+
+    if (result.ok) {
+      setSent(true);
+      form.reset();
+    } else {
+      setSendError(result.message);
+    }
   }
 
-async function copy(text: string, set: (v: boolean) => void) {
+  async function copy(text: string, set: (v: boolean) => void) {
     try {
       await navigator.clipboard.writeText(text);
       set(true);
@@ -79,16 +92,21 @@ async function copy(text: string, set: (v: boolean) => void) {
   const errId = (k: keyof FieldErrors) => `err-${k}`;
 
   return (
-    <section id="visit" className={`band${photo ? " visit-photo" : ""}`}>
+    <section id="visit" className={`band${photo ? " visit-photo" : ""}${showInfo ? "" : " visit-compact"}`}>
       {photo ? (
         <div className="visit-bg" aria-hidden="true" style={{ backgroundImage: `url(${photo})` }} />
       ) : null}
+      <div className="visit-kente" aria-hidden="true" />
       <div className="container contact">
         <div>
           <div className="heading">
-            <p className="eyebrow">Visit us</p>
-            <h2>Come in and explore.</h2>
-            <p className="muted">Questions about the library, the clubs or partnerships? Send us a message.</p>
+            <p className="eyebrow">{showInfo ? "Visit us" : "Still have a question?"}</p>
+            <h2>{showInfo ? "Come in and explore." : "Send us a message."}</h2>
+            <p className="muted">
+              {showInfo
+                ? "Questions about the library, the clubs or partnerships? Send us a message."
+                : "Ask about opening hours, the clubs, hiring the hall or anything else before you travel. We will reply as soon as we can."}
+            </p>
           </div>
           <div className="info info-grid">
             <div className="info-row wide">
@@ -117,30 +135,13 @@ async function copy(text: string, set: (v: boolean) => void) {
                 </span>
               </div>
             </div>
-            <div className="info-row">
+            <div className="info-row wide">
               <Icon name="clock" size={16} />
               <div>
-                <b>Opening hours</b>
-                <span className="tbc" title="Not yet confirmed">
-                  To be confirmed
-                </span>
-              </div>
-            </div>
-            <div className="info-row">
-              <Icon name="phone" size={16} />
-              <div>
-                <b>Phone</b>
-                <span className="tbc" title="Not yet confirmed">
-                  To be added
-                </span>
-              </div>
-            </div>
-            <div className="info-row">
-              <Icon name="mail" size={16} />
-              <div>
-                <b>Email</b>
-                <span className="tbc" title="Not yet confirmed">
-                  To be added
+                <b>Opening hours &amp; phone</b>
+                <span>
+                  <span className="tbc">Coming soon</span> Until they are confirmed, message us on Facebook or use
+                  the form.
                 </span>
               </div>
             </div>
@@ -234,16 +235,21 @@ async function copy(text: string, set: (v: boolean) => void) {
               <label htmlFor="website">Website</label>
               <input id="website" name="website" tabIndex={-1} autoComplete="off" />
             </div>
-            <button className="btn btn-default btn-block" type="submit">
-              Send message
+            <button className="btn btn-default btn-block" type="submit" disabled={sending} aria-busy={sending}>
+              {sending ? "Sending…" : "Send message"}
             </button>
             <p className="form-note muted">
               We only use your details to reply — see the <a href="/privacy">privacy page</a>.
             </p>
+            {sendError && (
+              <p role="alert" className="form-error">
+                {sendError}
+              </p>
+            )}
             {sent && (
               <p role="status" className="form-success">
                 <Icon name="check" size={16} />
-                Thanks! This demo form is not connected yet, so nothing was sent.
+                Thank you! Your message has been sent. We&apos;ll reply as soon as we can.
               </p>
             )}
           </div>

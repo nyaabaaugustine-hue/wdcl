@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GalleryGrid from "@/components/GalleryGrid";
 import PageHero from "@/components/PageHero";
-import { photo } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Gallery | Wiamoase Diaspora Public Library",
@@ -23,7 +22,7 @@ export default function GalleryPage() {
         }
         title="Inside the centre."
         lead="The reading room, the robotics bench, the clubs in session and the hall where the community meets."
-        image={photo("photo-1507842217343-583bb7270b66", 1600)}
+        image="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791466702/vv_z2zakh.jpg"
         priority
       />
 

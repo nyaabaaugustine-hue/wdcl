@@ -40,18 +40,21 @@ export default function VolunteerPage() {
               These can be done remotely for most of the year, which suits diaspora members who cannot travel often.
             </p>
           </div>
-          <div className="role-grid">
-            {remote.map((r) => (
-              <article className="role-card" key={r.title}>
-                <span className="icon-box" aria-hidden="true">
-                  <Icon name={r.icon} />
-                </span>
-                <h3>{r.title}</h3>
-                <span className="badge badge-brand">{r.commitment}</span>
-                <p className="muted">{r.text}</p>
-              </article>
+          <ol className="vol-topics">
+            {remote.map((r, i) => (
+              <li className="vol-topic" key={r.title}>
+                <div className="vol-topic-mark" aria-hidden="true">
+                  <span className="vol-topic-num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="icon-box vol-topic-icon">
+                    <Icon name={r.icon} />
+                  </span>
+                </div>
+                <h3 className="vol-topic-title">{r.title}</h3>
+                <p className="vol-topic-detail">{r.commitment}</p>
+                <p className="vol-topic-text">{r.text}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 

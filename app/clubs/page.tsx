@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import Photo from "@/components/Photo";
-import ClubIcon from "@/components/ClubIcon";
+import ClubsCards from "@/components/ClubsCards";
 import { ashantiCodes, clubs, stemLab, photo } from "@/lib/data";
 import PageHero from "@/components/PageHero";
 
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description:
     "Coding, Robotics and Reading clubs at the Wiamoase Diaspora Public Library, plus the MTN-funded Integrated STEM Lab and Telecel's Ashanti Codes programme.",
 };
-
-const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
 
 export default function ClubsPage() {
   return (
@@ -42,44 +40,7 @@ export default function ClubsPage() {
             </p>
           </div>
 
-          <div className="club-grid">
-            {clubs.map((c) => (
-              <article className="club-card" key={c.id}>
-                <div className="club-card-top">
-                  <span className="icon-box" aria-hidden="true">
-                    <ClubIcon club={c} size={20} />
-                  </span>
-                  <span className="badge badge-secondary">{c.ageGroup}</span>
-                </div>
-                <h3>{c.title}</h3>
-                <p className="muted">{c.blurb}</p>
-                <div className="days" aria-hidden="true">
-                  {DAY_LETTERS.map((d, i) => (
-                    <span key={i} className={c.days[i] ? "on" : undefined}>
-                      {d}
-                    </span>
-                  ))}
-                </div>
-                <dl className="mini-facts">
-                  <div>
-                    <dt>Meets</dt>
-                    <dd>{c.meets}</dd>
-                  </div>
-                  <div>
-                    <dt>Time</dt>
-                    <dd>{c.time}</dd>
-                  </div>
-                  <div>
-                    <dt>Venue</dt>
-                    <dd>{c.venue}</dd>
-                  </div>
-                </dl>
-                <Link className="btn btn-default" href={`/clubs/${c.id}`}>
-                  About the {c.label} Club
-                </Link>
-              </article>
-            ))}
-          </div>
+          <ClubsCards bare />
         </div>
       </section>
 
