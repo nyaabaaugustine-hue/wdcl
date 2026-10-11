@@ -33,6 +33,8 @@ export const navLinks: NavLink[] = [
       { label: "Our story", href: "/#story" },
       { label: "Facilities", href: "/#facilities" },
       { label: "FAQ", href: "/faq" },
+      { label: "Our team", href: "/team" },
+      { label: "Impact", href: "/impact" },
     ],
   },
   {
@@ -42,6 +44,19 @@ export const navLinks: NavLink[] = [
       { label: "Clubs", href: "/clubs" },
       { label: "Join a club", href: "/join" },
       { label: "Gallery", href: "/gallery" },
+      { label: "Digital library", href: "/books" },
+    ],
+  },
+  {
+    label: "Library",
+    children: [
+      { label: "Services", href: "/services" },
+      { label: "Become a member", href: "/membership" },
+      { label: "Find a book", href: "/collection" },
+      { label: "Ask a librarian", href: "/ask" },
+      { label: "Events & timetable", href: "/events" },
+      { label: "Children & teens", href: "/kids" },
+      { label: "Policies", href: "/policies" },
     ],
   },
   {
@@ -187,6 +202,12 @@ export type Club = {
   whoFor: string[];
   image: string;
   imageAlt: string;
+  /**
+   * Extra photos for the moving slideshow on the club page (the main `image` is always
+   * shown first). These are placeholders chosen from the centre's photo library: swap the
+   * numbers (0 to 33 in lib/media.ts) for photos that really show this club.
+   */
+  gallery: string[];
   /** Named supporter, where one is publicly documented. */
   supporter?: string;
   /** Custom icon image replacing the default SVG for this club. */
@@ -221,6 +242,7 @@ export const clubs: Club[] = [
       "Members who want to work at their own pace",
     ],
     image: CARD_PHOTO.coding,
+    gallery: [libraryPhotos[10], libraryPhotos[11], libraryPhotos[12], libraryPhotos[16]],
     imageAlt: GENERIC_ALT,
     programmes: [
       { title: "Computer Literacy Basics", desc: "Typing, files, internet safety and office tools. Tuesdays." },
@@ -258,6 +280,7 @@ export const clubs: Club[] = [
     ],
     image: CARD_PHOTO.robotics,
     imageAlt: GENERIC_ALT,
+    gallery: [libraryPhotos[6], libraryPhotos[7], libraryPhotos[8], libraryPhotos[15]],
     supporter: "Equipment funded by the MTN Ghana Foundation",
     iconImg: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791283746/jhh_labq8g.png",
     programmes: [
@@ -299,6 +322,7 @@ export const clubs: Club[] = [
     ],
     image: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791466702/vv_z2zakh.jpg",
     imageAlt: "Tall shelves of books in the library reading room",
+    gallery: [libraryPhotos[14], libraryPhotos[17], libraryPhotos[18], libraryPhotos[19]],
     programmes: [
       { title: "Story Circle", desc: "Read-aloud sessions, including Twi stories, for ages 4–9." },
       { title: "Teen Book Talk", desc: "Monthly discussion of one African-authored book." },
@@ -389,6 +413,9 @@ export const topics = [
   "Donations & partnerships",
   "Hall hire",
   "Volunteering",
+  "Library membership",
+  "Ask a librarian",
+  "Book request",
 ];
 
 /* ---------- Sponsors ---------- */

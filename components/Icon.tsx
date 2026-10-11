@@ -19,7 +19,10 @@ type IconName =
   | "chevron"
   | "share"
   | "phone"
-  | "grad";
+  | "grad"
+  | "headphones"
+  | "play"
+  | "search";
 
 type Props = { name: IconName; size?: number };
 
@@ -148,6 +151,26 @@ export default function Icon({ name, size }: Props) {
         <svg {...common}>
           <path d="M22 10 12 5 2 10l10 5 10-5Z" />
           <path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
+        </svg>
+      );
+    case "headphones":
+      return (
+        <svg {...common}>
+          <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        </svg>
+      );
+    case "play":
+      return (
+        <svg {...common}>
+          <path d="M7 4v16l13-8L7 4Z" />
+        </svg>
+      );
+    case "search":
+      return (
+        <svg {...common}>
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
         </svg>
       );
     case "arrow":

@@ -4,7 +4,7 @@ import { glance, MAP_URL } from "@/lib/data";
 
 const DIRECTOR_PORTRAIT = {
   src: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791467278/steven_rimqjb.jpg",
-  alt: "Portrait of Mr Stephen Adu, Library Director",
+  alt: "Portrait of Mr Stephen Adusei, Library Director",
 };
 
 export default function Overview() {
@@ -88,7 +88,7 @@ export default function Overview() {
                   sizes="72px"
                 />
                 <p className="glance-director-cap">
-                  <span className="glance-director-name">Mr Stephen Adu</span>
+                  <span className="glance-director-name">Mr Stephen Adusei</span>
                   <span className="glance-director-role">Library Director</span>
                 </p>
               </div>

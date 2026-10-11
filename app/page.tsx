@@ -11,6 +11,7 @@ import ClubsCards from "@/components/ClubsCards";
 import HappeningNow from "@/components/HappeningNow";
 import Support from "@/components/Support";
 import Visit from "@/components/Visit";
+import DigitalLibrary from "@/components/DigitalLibrary";
 
 /*
  * UNDO SWITCH: set MERGED_STORY to false to bring back the previous homepage
@@ -60,6 +61,7 @@ export default function Home() {
           <Clubs />
         </>
       )}
+      <DigitalLibrary />
       <HappeningNow />
       <Support showSmallActs />
       <Visit />

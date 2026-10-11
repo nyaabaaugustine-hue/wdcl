@@ -5,7 +5,7 @@ import { glance, MAP_URL, storyPhoto, timeline } from "@/lib/data";
 
 const DIRECTOR_PORTRAIT = {
   src: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791467278/steven_rimqjb.jpg",
-  alt: "Portrait of Mr Stephen Adu, Library Director",
+  alt: "Portrait of Mr Stephen Adusei, Library Director",
 };
 
 /**
@@ -135,7 +135,7 @@ export default function OurStory() {
               </span>
               <span className="our-story-director-text">
                 <b>A word from the Director</b>
-                <span>Mr Stephen Adu, Library Director</span>
+                <span>Mr Stephen Adusei, Library Director</span>
               </span>
               <Icon name="arrow" size={18} />
             </a>

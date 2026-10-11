@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ClubIcon from "./ClubIcon";
 import FeatureIcon from "./FeatureIcon";
 import Reveal from "./Reveal";
@@ -12,6 +13,9 @@ const DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satu
  * All three clubs side by side, with the programmes tucked into an accessible
  * "What you'll do" disclosure. Replaces the tabbed layout in Clubs.tsx, which is
  * untouched. Switch back with NEW_CARDS in app/page.tsx.
+ *
+ * Each whole card opens that club's own page (the title is the link; a stretched
+ * overlay makes the card clickable). "Register interest" opens the pop-up form.
  *
  * `bare` renders only the card grid (no section, heading or footnote) so inner
  * pages such as /clubs can reuse it under their own heading.
@@ -33,7 +37,11 @@ export default function ClubsCards({ bare = false }: { bare?: boolean }) {
                 </header>
 
                 <div className="cl-body">
-                  <h3 id={`cl-${club.id}`}>{club.title}</h3>
+                  <h3 id={`cl-${club.id}`}>
+                    <Link href={`/clubs/${club.id}`} className="cl-title-link">
+                      {club.title}
+                    </Link>
+                  </h3>
                   <p className="muted">{club.blurb}</p>
 
                   <dl className="cl-facts">
@@ -83,9 +91,9 @@ export default function ClubsCards({ bare = false }: { bare?: boolean }) {
                     >
                       Register interest
                     </a>
-                    <a href={`/clubs/${club.id}`} className="card-link">
+                    <Link href={`/clubs/${club.id}`} className="card-link">
                       About the club →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </article>

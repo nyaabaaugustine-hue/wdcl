@@ -3,6 +3,7 @@ import Overview from "@/components/Overview";
 import Story from "@/components/Story";
 import AboutVoices from "@/components/AboutVoices";
 import Support from "@/components/Support";
+import AuthorityNetwork from "@/components/AuthorityNetwork";
 import DirectorWelcome from "@/components/DirectorWelcome";
 import PageHero from "@/components/PageHero";
 import { photo } from "@/lib/data";
@@ -32,6 +33,7 @@ export default function AboutPage() {
       />
       <Overview />
       <Story />
+      <AuthorityNetwork />
       <DirectorWelcome />
       <AboutVoices />
       <Support />

@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import CopyLink from "@/components/CopyLink";
 import Icon from "@/components/Icon";
 import ClubIcon from "@/components/ClubIcon";
-import Photo from "@/components/Photo";
+import ClubSlider from "@/components/ClubSlider";
 import PageHero from "@/components/PageHero";
 import { clubs, stemLab } from "@/lib/data";
+import { GENERIC_ALT } from "@/lib/media";
 
 const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
 const DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -38,6 +39,11 @@ export default async function ClubPage({ params }: Params) {
   const prev = clubs[(idx - 1 + clubs.length) % clubs.length];
   const next = clubs[(idx + 1) % clubs.length];
 
+  const photos = [
+    { src: club.image, alt: club.imageAlt },
+    ...club.gallery.map((src) => ({ src, alt: GENERIC_ALT })),
+  ];
+
   return (
     <>
       <PageHero
@@ -49,12 +55,17 @@ export default async function ClubPage({ params }: Params) {
         }
         title={club.title}
         lead={club.blurb}
-        image={club.image}
+        pattern
         priority
       >
         <div className="page-hero-badges">
           <span className="badge badge-brand">{club.badge}</span>
           {club.supporter ? <span className="badge badge-secondary">{club.supporter}</span> : null}
+        </div>
+        <div className="btn-row u-mt24">
+          <a className="btn btn-default btn-lg" href={`/?topic=${encodeURIComponent(club.title)}#visit`} data-dialog="join" data-club={club.title}>
+            Register interest
+          </a>
         </div>
       </PageHero>
 
@@ -62,14 +73,7 @@ export default async function ClubPage({ params }: Params) {
         <div className="container">
           <div className="club-detail">
             <div>
-              <Photo
-                src={club.image}
-                alt={club.imageAlt}
-                caption={club.title}
-                ratio="3-2"
-                priority
-                sizes="(max-width: 900px) 100vw, 60vw"
-              />
+              <ClubSlider photos={photos} label={club.title} />
 
               <h2 className="sub-h">About the club</h2>
               <p className="prose-p">{club.longDesc}</p>
@@ -133,8 +137,21 @@ export default async function ClubPage({ params }: Params) {
                       <span className="muted">No prior experience required</span>
                     </li>
                   </ul>
-                  <a className="btn btn-default btn-block" href={`/?topic=${encodeURIComponent(club.title)}#visit`}>
+                  <a
+                    className="btn btn-default btn-block"
+                    href={`/?topic=${encodeURIComponent(club.title)}#visit`}
+                    data-dialog="join"
+                    data-club={club.title}
+                  >
                     Register interest
+                  </a>
+                  <a
+                    className="btn btn-outline btn-block"
+                    href={`/contact`}
+                    data-dialog="visit"
+                    data-topic={club.title}
+                  >
+                    Ask a question
                   </a>
                   <CopyLink className="back-top" />
                 </div>
@@ -169,6 +186,45 @@ export default async function ClubPage({ params }: Params) {
           </div>
         </section>
       ) : null}
+
+      <section className={isRobotics ? undefined : "band"}>
+        <div className="container">
+          <div className="cta-card">
+            <div>
+              <p className="eyebrow">Join in</p>
+              <h2>Ready to try the {club.label} Club?</h2>
+              <p>
+                Tell us you are interested and the library team will get back to you with a place.
+                Bring a parent or guardian if you are under 18.
+              </p>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <Icon name="check" />
+                  Free to join
+                </li>
+                <li>
+                  <Icon name="check" />
+                  No prior experience needed
+                </li>
+                <li>
+                  <Icon name="check" />
+                  {club.meets}, {club.time}
+                </li>
+              </ul>
+              <a
+                className="btn btn-lg"
+                href={`/?topic=${encodeURIComponent(club.title)}#visit`}
+                data-dialog="join"
+                data-club={club.title}
+              >
+                Register interest
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section>
         <div className="container">

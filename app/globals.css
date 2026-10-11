@@ -1743,6 +1743,250 @@ form .btn-block{height:50px;margin-top:6px;border-radius:12px;font-size:15px;fon
   .field input,.field select,.field textarea,.nl-form input{transition:none}
 }
 
+/* ==========================================================================
+   Visual refinement pass: styling only, no content, markup or behaviour
+   changes. Same palette, type and components, with a calmer, more
+   institutional finish (clear hierarchy, consistent cards, crisp numerals)
+   in the spirit of a national library service.
+   ========================================================================== */
+
+/* Typography rhythm */
+body{text-rendering:optimizeLegibility}
+h1,h2{text-wrap:balance}
+p{text-wrap:pretty}
+.hero h1{letter-spacing:-.035em}
+.heading h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.025em}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.09em}
+.eyebrow::before{content:"";flex:none;width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.7}
+.page-hero .eyebrow::before,.cta-card .eyebrow::before{display:none}
+.ov-lead{font-family:var(--font-serif),Georgia,serif;font-size:20px;font-weight:500;line-height:1.6}
+.quote blockquote{font-family:var(--font-serif),Georgia,serif;font-size:18px}
+.prose a{color:hsl(var(--brand-ink));text-decoration:underline;text-underline-offset:3px}
+
+/* Buttons: a little depth and a soft lift */
+.btn{border-radius:10px;font-weight:600;transition:background .15s,color .15s,border-color .15s,box-shadow .2s,transform .2s}
+.btn-default{box-shadow:0 1px 0 hsl(0 0% 100%/.14) inset,0 8px 18px -10px hsl(var(--primary)/.75)}
+.btn-outline{box-shadow:0 1px 2px hsl(28 20% 20%/.06)}
+.btn:active{transform:translateY(1px)}
+@media(hover:hover){
+  .btn-default:hover{box-shadow:0 1px 0 hsl(0 0% 100%/.14) inset,0 14px 24px -12px hsl(var(--primary)/.8);transform:translateY(-1px)}
+  .btn-outline:hover{transform:translateY(-1px)}
+}
+
+/* Header: frosted bar, gold underline on the current page */
+header.site{background:hsl(var(--background)/.88);backdrop-filter:saturate(1.4) blur(10px);box-shadow:0 8px 24px -20px hsl(28 20% 20%/.35)}
+nav.main a[aria-current="page"],nav.main button.nav-btn[aria-expanded="true"]{box-shadow:inset 0 -2px 0 hsl(var(--brand))}
+.submenu{border-radius:14px;box-shadow:0 18px 40px -16px rgb(24 21 19/.22),0 2px 6px rgb(24 21 19/.05)}
+
+/* Sub-page headers: soft gold glow over a warm wash */
+.page-hero{background:radial-gradient(720px 260px at 50% -35%,hsl(var(--brand)/.16),transparent 70%),linear-gradient(hsl(var(--surface-tint)),hsl(var(--background)))}
+.page-hero h1{letter-spacing:-.03em}
+
+/* Stats: serif numerals, roomier cells */
+.stat b{font-family:var(--font-serif),Georgia,serif;font-size:34px;font-weight:600;line-height:1.1;font-variant-numeric:lining-nums tabular-nums}
+.stat span{font-size:13.5px}
+.stats-band .stat{padding:22px 28px}
+
+/* Cards: one consistent radius, softer shadows, gentle hover accent */
+.card{border-radius:16px;box-shadow:0 1px 2px hsl(28 20% 20%/.05),0 14px 32px -22px hsl(28 20% 20%/.18)}
+.club-card,.supporter,.partner,.role-card,.post-card{border-radius:16px}
+.feature{border-radius:24px}
+.photo{border-radius:16px}
+.icon-box{width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,hsl(var(--brand-soft)),hsl(var(--brand)/.2));box-shadow:inset 0 0 0 1px hsl(var(--brand)/.22)}
+.icon-box svg{width:21px;height:21px}
+@media(hover:hover){
+  .club-card,.supporter:not(.pending),.partner,.role-card{transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s,border-color .28s}
+  .club-card:hover,.supporter:not(.pending):hover,.partner:hover,.role-card:hover{transform:translateY(-3px);border-color:hsl(var(--brand)/.4);box-shadow:0 22px 44px -24px hsl(28 20% 20%/.34)}
+}
+.badge{letter-spacing:.01em}
+.cat{letter-spacing:.07em}
+
+/* Timeline: filled gold markers on a fading rule */
+.timeline::before{width:2px;background:linear-gradient(hsl(var(--brand)/.55),hsl(var(--border)))}
+.tl::before{background:hsl(var(--brand));border:3px solid hsl(var(--background));box-shadow:0 0 0 2px hsl(var(--brand)/.45)}
+
+/* Tables */
+th{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:hsl(var(--surface-tint))}
+
+/* Call to action: richer panel with a fine woven texture */
+.cta-card{border-radius:24px;box-shadow:0 30px 60px -30px hsl(158 42% 14%/.7)}
+.cta-card::before{background:radial-gradient(420px 220px at 92% 0%,hsl(var(--brand)/.28),transparent 70%),repeating-linear-gradient(135deg,transparent 0 22px,hsl(var(--primary-foreground)/.045) 22px 23px)}
+
+/* Footer: warm tinted base, small-caps column titles */
+body>footer{background:hsl(var(--surface-tint))}
+footer h2{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:hsl(var(--muted-foreground))}
+
+@media(prefers-reduced-motion:reduce){
+  .btn,.btn-default:hover,.btn-outline:hover,.club-card,.supporter,.partner,.role-card{transition:none;transform:none}
+}
+
+/* Digital library (books) */
+.dl-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.dl .heading{margin-bottom:28px}
+.dl-steps{list-style:none;display:grid;gap:18px;margin:0 0 30px}
+.dl-steps li{display:flex;gap:14px;align-items:flex-start}
+.dl-steps .n{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:hsl(var(--primary));color:hsl(var(--primary-foreground));font-size:13px;font-weight:700}
+.dl-steps b{display:block;font-weight:600}
+.dl-steps .muted{display:block;font-size:14.5px}
+.dl-stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.dl-store{display:inline-flex;flex-direction:column;justify-content:center;min-height:52px;padding:8px 22px;border-radius:12px;background:hsl(var(--foreground));color:hsl(var(--background));line-height:1.2;transition:transform .2s,box-shadow .2s}
+.dl-store span{font-size:11px;letter-spacing:.04em;opacity:.8}
+.dl-store b{font-size:16px;font-weight:600}
+.dl-store:hover{transform:translateY(-1px);box-shadow:0 12px 24px -14px hsl(28 20% 20%/.6)}
+.dl-store:focus-visible{outline:2px solid hsl(var(--ring));outline-offset:3px}
+.dl-note{margin-top:20px;max-width:54ch;font-size:13.5px}
+.dl-note a{color:hsl(var(--brand-ink));font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.dl-formats{display:grid;gap:14px}
+.dl-format{display:flex;gap:16px;align-items:flex-start;padding:22px;border:1px solid hsl(var(--border));border-radius:16px;background:hsl(var(--card));box-shadow:0 1px 2px hsl(28 20% 20%/.05),0 14px 32px -22px hsl(28 20% 20%/.18)}
+.dl-format .icon-box{flex:none;margin:0}
+.dl-format h3{font-size:18px;margin-bottom:4px}
+.dl-format p{font-size:14.5px}
+.callout .muted{display:block;font-size:14px}
+.callout a{color:hsl(var(--brand-ink));font-weight:500;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.dl-grid{grid-template-columns:1fr;gap:36px}}
+@media(prefers-reduced-motion:reduce){.dl-store{transition:none}.dl-store:hover{transform:none}}
+
+/* Contact page: the Wiamoase logo pattern replaces the kente fabric behind the form.
+   A light veil keeps the text readable while the pattern still shows. */
+.visit-photo .visit-kente{
+  background:
+    linear-gradient(hsl(var(--background)/.88),hsl(var(--background)/.88)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png") center top/auto repeat;
+}
+
+/* Home page clubs section: cream Wiamoase logo pattern replaces the photo backdrop */
+#clubs::before{
+  background:url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png") center top/auto repeat;
+  opacity:1;
+  -webkit-mask-image:none;mask-image:none;
+}
+.dark #clubs::before{opacity:.14}
+
+/* Visit / message-form section (home page and /visit): cream logo pattern replaces the kente fabric.
+   The contact page keeps its green pattern (.visit-photo). */
+#visit:not(.visit-photo) .visit-kente{
+  background:url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png") center top/auto repeat;
+}
+.dark #visit:not(.visit-photo) .visit-kente{
+  background:
+    linear-gradient(hsl(var(--background)/.93),hsl(var(--background)/.93)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png") center top/auto repeat;
+}
+
+/* Logo-pattern backgrounds: fix the tile size so the pattern always reads as a pattern,
+   whatever the pixel size of the source image, and keep it visible in dark mode. */
+#visit:not(.visit-photo) .visit-kente{background-size:560px auto}
+.visit-photo .visit-kente{background-size:auto,560px auto}
+#clubs::before{background-size:560px auto}
+.dark #visit:not(.visit-photo) .visit-kente{
+  background-image:
+    linear-gradient(hsl(var(--background)/.78),hsl(var(--background)/.78)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png");
+  background-size:auto,560px auto;
+}
+
+/* Contact page: my first veil (88%) hid almost all of the green logo pattern.
+   Keep the heading area calm, then let the pattern show clearly below it. */
+.visit-photo .visit-kente{
+  background-image:
+    linear-gradient(180deg,
+      hsl(var(--background)/.9) 0,
+      hsl(var(--background)/.9) 300px,
+      hsl(var(--background)/.5) 520px,
+      hsl(var(--background)/.5) 100%),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png");
+  background-size:100% 100%,560px auto;
+  background-position:0 0,center top;
+  background-repeat:no-repeat,repeat;
+}
+
+/* /visit page, "Before you come / Good to know": green logo pattern behind the tip cards.
+   Strong veil behind the heading for readable text, lighter below so the pattern shows. */
+.vp-tips{position:relative;isolation:isolate}
+.vp-tips::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(180deg,
+      hsl(var(--background)/.9) 0,
+      hsl(var(--background)/.9) 220px,
+      hsl(var(--background)/.5) 380px,
+      hsl(var(--background)/.5) 100%),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png");
+  background-size:100% 100%,560px auto;
+  background-position:0 0,center top;
+  background-repeat:no-repeat,repeat;
+}
+
+/* ==========================================================================
+   Club pages: moving photo slideshow + whole-card links
+   ========================================================================== */
+.club-slider{margin-bottom:8px}
+.cs-frame{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:8px;background:hsl(var(--muted));border:1px solid hsl(var(--border))}
+.cs-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease}
+.cs-slide.active{opacity:1;z-index:1}
+.cs-slide::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(to top,hsl(28 30% 8%/.45),transparent);pointer-events:none}
+.cs-img{object-fit:cover}
+.cs-arrow{position:absolute;top:50%;translate:0 -50%;z-index:3;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:hsl(28 25% 8%/.55);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:background .15s}
+.cs-arrow:hover{background:hsl(28 25% 8%/.8)}
+.cs-arrow:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.cs-arrow.prev{left:12px}
+.cs-arrow.next{right:12px}
+.cs-bar{display:flex;align-items:center;gap:14px;margin-top:14px}
+.cs-dots{display:flex;gap:8px}
+.cs-dot{position:relative;width:32px;height:6px;padding:0;border:0;border-radius:3px;background:hsl(var(--border));cursor:pointer;transition:background .18s}
+.cs-dot::before{content:"";position:absolute;left:-4px;right:-4px;top:-17px;bottom:-17px}
+.cs-dot[aria-current="true"]{background:hsl(var(--brand))}
+.cs-dot:focus-visible,.cs-pause:focus-visible{outline:2px solid hsl(var(--ring));outline-offset:3px}
+.cs-pause{display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid hsl(var(--border));border-radius:50%;background:hsl(var(--card));color:hsl(var(--foreground));font-size:10px;cursor:pointer;transition:background .15s,border-color .15s}
+.cs-pause:hover{border-color:hsl(var(--foreground)/.4)}
+.cs-pause[aria-pressed="true"]{background:hsl(var(--primary));border-color:hsl(var(--primary));color:hsl(var(--primary-foreground))}
+.cs-count{margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.05em;font-variant-numeric:tabular-nums;color:hsl(var(--muted-foreground))}
+@media(prefers-reduced-motion:no-preference){
+  .cs-slide.active .cs-img{animation:csZoom 9s ease-out both}
+  @keyframes csZoom{from{scale:1}to{scale:1.08}}
+}
+@media(prefers-reduced-motion:reduce){.cs-slide,.cs-arrow,.cs-dot,.cs-pause{transition:none}}
+@media(max-width:520px){.cs-arrow{width:40px;height:40px}.cs-arrow.prev{left:8px}.cs-arrow.next{right:8px}}
+
+/* Club cards: the whole card opens the club page. The title link is stretched over the
+   card; the programme list and the buttons sit above it so they stay clickable. */
+.cl-card{position:relative;cursor:pointer}
+.cl-title-link{color:inherit}
+.cl-title-link::after{content:"";position:absolute;inset:0;z-index:1}
+.cl-more,.cl-actions{position:relative;z-index:2}
+.cl-title-link:focus-visible{outline:none}
+.cl-card:has(.cl-title-link:focus-visible){outline:3px solid hsl(var(--ring));outline-offset:3px}
+@media(hover:hover){
+  .cl-card{transition:border-color .25s ease,transform .25s cubic-bezier(.22,1,.36,1)}
+  .cl-card:hover{border-color:hsl(var(--foreground)/.55);transform:translateY(-3px)}
+  .cl-card:hover .cl-title-link{text-decoration:underline;text-decoration-color:hsl(var(--brand));text-decoration-thickness:2px;text-underline-offset:5px}
+}
+
+/* ==========================================================================
+   Detail pages (club pages, news stories): green Wiamoase logo pattern as the
+   hero background, with a light veil so dark text stays easy to read.
+   ========================================================================== */
+.page-hero.ph-pattern,.article-head{
+  background-image:
+    linear-gradient(hsl(var(--background)/.76),hsl(var(--background)/.76)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png");
+  background-size:100% 100%,560px auto;
+  background-position:0 0,center top;
+  background-repeat:no-repeat,repeat;
+}
+.page-hero.ph-pattern h1{color:hsl(var(--foreground));text-shadow:none}
+.page-hero.ph-pattern .lead{color:hsl(var(--muted-foreground));text-shadow:none}
+.page-hero.ph-pattern .eyebrow,.page-hero.ph-pattern .eyebrow a{color:hsl(var(--brand-ink))}
+.page-hero.ph-pattern .crumb-nav a{opacity:1}
+
+/* Home page "Happening now" band: green logo pattern replaces the kente photo.
+   The section keeps its dark palette, so the veil is a deep forest tone with the pattern showing through. */
+.happen::before{
+  background:
+    linear-gradient(hsl(var(--background)/.8),hsl(var(--background)/.74)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png") center top/560px auto repeat;
+}
+
 /* Honour forced-colors / high-contrast modes for custom pills and cards */
 @media(forced-colors:active){
   .chip,.topic-chips .chip span,.card,.fx-card,.cl-card,.gv-way,.btn{border:1px solid CanvasText}

@@ -2,7 +2,7 @@ import Photo from "./Photo";
 
 const DIRECTOR_PORTRAIT = {
   src: "https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791467278/steven_rimqjb.jpg",
-  alt: "Portrait of Mr Stephen Adu, Library Director",
+  alt: "Portrait of Mr Stephen Adusei, Library Director",
 };
 
 type Props = {
@@ -24,7 +24,7 @@ export default function DirectorWelcome({ photo = DIRECTOR_PORTRAIT }: Props) {
         <div className="dw-portrait">
           <Photo src={photo.src} alt={photo.alt} ratio="1-1" sizes="148px" />
           <p className="dw-portrait-cap">
-            Mr Stephen Adu <span aria-hidden="true">·</span> Library Director
+            Mr Stephen Adusei <span aria-hidden="true">·</span> Library Director
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function DirectorWelcome({ photo = DIRECTOR_PORTRAIT }: Props) {
         </div>
 
         <footer className="dw-sign">
-          <span className="dw-name">Mr Stephen Adu</span>
+          <span className="dw-name">Mr Stephen Adusei</span>
           <span className="dw-role">Library Director, Wiamoase Diaspora Public Library</span>
         </footer>
       </div>

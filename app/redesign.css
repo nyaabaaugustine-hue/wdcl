@@ -1,0 +1,239 @@
+/* ==========================================================================
+   WARM EDITORIAL REDESIGN
+   A design layer that sits on top of globals.css (same palette, same
+   components, same content). It changes the *feel*: larger serif type,
+   hairline rules instead of boxes, numbered sections, calmer corners,
+   more air, and a deep forest footer.
+
+   UNDO: delete the line  import "./redesign.css";  in app/layout.tsx and
+   the site returns to the previous design. Nothing else was changed.
+   ========================================================================== */
+
+/* ---------- Foundations ---------- */
+:root{--radius:.25rem}
+html{scroll-padding-top:84px}
+body{font-size:17px;line-height:1.7}
+.container{max-width:1200px;padding:0 32px}
+@media(max-width:520px){.container{padding:0 20px}}
+h1,h2,h3{font-weight:500}
+.muted{line-height:1.7}
+::selection{background:hsl(var(--brand)/.4)}
+
+/* ---------- Header: quiet paper bar, underline navigation ---------- */
+header.site{background:hsl(var(--background)/.94);box-shadow:none;border-bottom:1px solid hsl(var(--border))}
+header.site.scrolled{box-shadow:0 12px 28px -24px hsl(28 20% 20%/.4)}
+header.site .container{height:68px}
+.mobile{max-height:calc(100dvh - 68px)}
+nav.main{gap:0;margin-left:24px}
+nav.main a,nav.main button.nav-btn{
+  border-radius:0;padding:8px 2px 9px;margin:0 11px;font-size:14.5px;letter-spacing:.005em;
+  background-image:linear-gradient(hsl(var(--brand)),hsl(var(--brand)));background-repeat:no-repeat;background-position:0 100%;background-size:0 2px;
+  transition:background-size .3s cubic-bezier(.22,1,.36,1),color .15s ease;
+}
+nav.main a:hover,nav.main button.nav-btn:hover,
+nav.main button.nav-btn[aria-expanded="true"],nav.main a[aria-current="page"]{
+  background-color:transparent;box-shadow:none;color:hsl(var(--foreground));
+  background-size:100% 2px;
+}
+.submenu{border-radius:8px;box-shadow:0 20px 44px -22px hsl(28 20% 20%/.35)}
+.submenu::before{left:0;right:0;width:auto;height:2px;border-radius:0}
+
+/* ---------- Buttons: pills, flat, confident ---------- */
+.btn{border-radius:7%;font-weight:600;letter-spacing:.005em}
+.btn-default,.btn-default:hover{box-shadow:none}
+.btn-outline{box-shadow:none;background:transparent;border-color:hsl(var(--foreground)/.5)}
+.btn-outline:hover{background:hsl(var(--foreground));border-color:hsl(var(--foreground));color:hsl(var(--background))}
+.btn-lg{height:50px;padding:0 34px}
+form .btn-block,.nl-form .btn,.dl-store{border-radius:7%}
+
+/* ---------- Section headings: hairline rule + numbered label ---------- */
+main{counter-reset:sec}
+.heading{max-width:760px;margin-bottom:56px}
+.heading:not(:has(.kente-inline))::before{display:none}
+.heading .eyebrow{
+  display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-top:18px;
+  border-top:1px solid hsl(var(--foreground)/.8);
+  font-size:12px;font-weight:700;letter-spacing:.16em;counter-increment:sec;
+}
+.heading .eyebrow::before{
+  content:counter(sec,decimal-leading-zero);width:auto;height:auto;background:none;opacity:1;border-radius:0;
+  font:600 16px/1 var(--font-serif),Georgia,serif;letter-spacing:0;color:hsl(var(--brand-ink));
+}
+.heading h2{font-size:clamp(34px,4.6vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:500;margin-bottom:18px}
+.heading p{font-size:18px;line-height:1.7}
+@media(min-width:900px){section{padding:120px 0}}
+@media(max-width:899px){section{padding:76px 0}}
+@media(max-width:520px){section{padding:60px 0}}
+
+/* ---------- Hero: big serif statement ---------- */
+.hero .badge{background:none;border:0;padding:0;margin-bottom:28px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:hsl(var(--brand-ink))}
+.hero a.badge:hover{background:none}
+.hero h1{font-size:clamp(46px,7.6vw,108px);line-height:.98;letter-spacing:-.04em;font-weight:500;max-width:12ch;margin-bottom:28px}
+.hero p.lead{font-size:clamp(18px,1.6vw,21px);line-height:1.65;max-width:560px}
+.hero-facts{border-top:1px solid hsl(var(--foreground)/.7)}
+.hero-trust li{border-radius:4px}
+
+/* ---------- Stats: flat editorial band, big serif figures ---------- */
+section.stats-band{margin-top:0;padding:0}
+@media(min-width:901px){section.stats-band{margin-top:0}.hero{padding-bottom:72px}}
+section.stats-band .stats{border-radius:0;border-inline:0;border-block:1px solid hsl(var(--foreground)/.8);background:hsl(var(--background));box-shadow:none}
+.stat::before{display:none}
+.stat{padding:36px 28px;border-right:1px solid hsl(var(--border))}
+.stat:hover{background:hsl(var(--brand-soft)/.45)}
+.stat b{font-size:clamp(38px,4.6vw,60px);font-weight:500;letter-spacing:-.035em;line-height:1;margin-bottom:10px}
+.stat span{font-size:13px;letter-spacing:.02em}
+@media(max-width:900px){section.stats-band .stats{border-radius:0}.stat{padding:26px 18px}}
+
+/* ---------- Corners and surfaces: crisp, hairline, almost flat ---------- */
+.card,.club-card,.role-card,.supporter,.partner,.post-card,.dl-format,.cl-card,.feature,.fx-card,
+.cta-card,.gv-small,.gv-way,.info-grid .info-row,.contact form.card,.vp-tip,.vp-loc-card,.ticks-3 li{
+  border-radius:8px;
+}
+.card,.club-card,.role-card,.supporter,.partner,.dl-format,.cl-card,.fx-card,.vp-tip,.vp-loc-card{
+  box-shadow:none;border-color:hsl(var(--foreground)/.16);
+}
+.photo,.gm-tile,.vp-map,.vp-facts-grid{border-radius:6px}
+.photo::after,.gm-tile::after{border-radius:inherit}
+.cta-card,.gv-small{box-shadow:none}
+.icon-box{width:46px;height:46px;border-radius:50%;background:hsl(var(--brand-soft));box-shadow:none;border:1px solid hsl(var(--brand)/.4)}
+@media(hover:hover){
+  .club-card:hover,.supporter:not(.pending):hover,.partner:hover,.role-card:hover{transform:none;border-color:hsl(var(--foreground)/.6);box-shadow:none}
+  .card.group:hover{transform:none;box-shadow:none}
+}
+
+/* Facilities cards */
+.fx-card{border-width:1px}
+.fx-icon{border-radius:50%}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .fx-card:hover{transform:translateY(-4px);box-shadow:none;border-color:hsl(var(--foreground)/.6)}
+}
+.fx-body h3,.cl-body h3{font-weight:500;letter-spacing:-.025em}
+
+/* News: open, image-led list with no card boxes */
+.post-card{border:0;background:none;box-shadow:none;border-radius:0}
+.post-card:hover{transform:none;box-shadow:none;border-color:transparent}
+.post-media .photo,.post-media .photo::after{border-radius:6px}
+.post-body{padding:20px 0 0}
+.feature{border-color:hsl(var(--foreground)/.16);box-shadow:none}
+.feature:hover{transform:none;box-shadow:none}
+
+/* ---------- Page headers: left-aligned, large serif ---------- */
+.page-hero,.page-hero.ph-img{text-align:left}
+.page-hero.ph-img{min-height:420px;padding:112px 0 88px}
+.page-hero h1{font-size:clamp(40px,6.4vw,84px);line-height:1;letter-spacing:-.04em;font-weight:500;max-width:15ch;margin:0 0 22px}
+.page-hero .lead{font-size:clamp(18px,1.7vw,21px);max-width:620px;margin:0}
+.page-hero .kente-inline,.page-hero-badges{justify-content:flex-start}
+.article-head h1{font-weight:500}
+
+/* ---------- Call-to-action panel ---------- */
+.cta-card::before{background:repeating-linear-gradient(135deg,transparent 0 22px,hsl(var(--primary-foreground)/.04) 22px 23px)}
+.cta-card h2{font-weight:500;letter-spacing:-.03em}
+
+/* ---------- Forms: calmer corners ---------- */
+.field input,.field select,.field textarea,.nl-form input{border-radius:6px}
+.dlg-panel{border-radius:12px}
+.contact form.card .card-title{font-weight:500}
+
+/* ---------- Footer: deep forest, light text ---------- */
+body>footer{
+  --background:158 38% 9%;--foreground:40 30% 94%;
+  --card:158 30% 13%;--card-foreground:40 30% 94%;
+  --primary:40 92% 58%;--primary-foreground:158 42% 10%;
+  --secondary:158 20% 16%;--secondary-foreground:40 30% 92%;
+  --muted:158 20% 16%;--muted-foreground:40 12% 74%;
+  --accent:158 20% 18%;--accent-foreground:40 30% 94%;
+  --border:158 18% 22%;--input:40 12% 54%;--ring:40 92% 58%;
+  --brand:40 92% 58%;--brand-ink:42 95% 70%;--brand-soft:40 40% 16%;
+  --clay:18 70% 60%;--clay-ink:18 75% 72%;--clay-soft:16 40% 16%;--surface-tint:158 30% 12%;
+  background:hsl(var(--background));color:hsl(var(--foreground));border-top:0;padding:96px 0 32px;
+}
+body>footer .logo-img{mix-blend-mode:screen}
+body>footer .logo-img img{filter:invert(1)}
+.fcols{gap:56px}
+body>footer h2{font-size:12px;letter-spacing:.16em;color:hsl(var(--brand-ink))}
+body>footer .btn-outline{border-color:hsl(var(--foreground)/.4);color:hsl(var(--foreground))}
+body>footer .btn-outline:hover{background:hsl(var(--foreground));color:hsl(var(--background))}
+body>footer .btn-default{background:hsl(var(--primary));color:hsl(var(--primary-foreground))}
+.legal{border-top-color:hsl(var(--border))}
+
+/* Other <footer> elements (director's signature, testimonial tiles) are not the site footer. */
+.dw-sign,.tl-c footer{background:none;border-top:0;padding:0}
+
+/* ==========================================================================
+   MOTION: gentle, purposeful animation. Everything below runs only for
+   visitors who have NOT asked their device to reduce motion.
+   Uses the independent `translate` / `scale` properties so it never fights
+   with the hover transforms used elsewhere.
+   ========================================================================== */
+@media(prefers-reduced-motion:no-preference){
+
+  @keyframes riseIn{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes wipeIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes heroDrift{from{scale:1.08}to{scale:1}}
+  @keyframes progressGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes answerIn{from{opacity:0;translate:0 -6px}to{opacity:1;translate:0 0}}
+
+  /* Home hero: staged entrance, then a slow settle on the photograph */
+  .hero .badge{animation:riseIn .8s cubic-bezier(.22,1,.36,1) .05s both}
+  .hero h1{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .15s both}
+  .hero p.lead{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .3s both}
+  .hero .cta{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .45s both}
+  .hero-facts{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .6s both}
+  .hero-trust{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .72s both}
+  .hero-bg{animation:heroDrift 16s cubic-bezier(.22,1,.36,1) both}
+
+  /* Inner-page headers: same staged entrance */
+  .page-hero .container>*{animation:riseIn .8s cubic-bezier(.22,1,.36,1) both}
+  .page-hero .container>:nth-child(1){animation-delay:.05s}
+  .page-hero .container>:nth-child(2){animation-delay:.12s}
+  .page-hero .container>:nth-child(3){animation-delay:.2s}
+  .page-hero .container>:nth-child(4){animation-delay:.3s}
+  .page-hero .container>:nth-child(5){animation-delay:.4s}
+
+  /* Buttons: a soft light sweep on the primary action, arrows nudge forward */
+  .btn{position:relative;overflow:hidden}
+  .btn-default::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(105deg,transparent 30%,hsl(0 0% 100%/.28) 50%,transparent 70%);
+    translate:-120% 0;transition:translate .7s ease;
+  }
+  .btn-default:hover::after{translate:120% 0}
+  .btn svg{transition:translate .25s cubic-bezier(.22,1,.36,1)}
+  .btn:not(.btn-icon):hover svg:last-child{translate:3px 0}
+
+  /* Cards: icon lifts when the card is hovered */
+  .fx-icon{transition:translate .3s cubic-bezier(.22,1,.36,1)}
+  .fx-card:hover .fx-icon{translate:0 -4px}
+
+  /* Footer links slide in slightly on hover */
+  body>footer .fcols a:not(.btn){transition:translate .2s cubic-bezier(.22,1,.36,1),color .15s ease}
+  body>footer .fcols a:not(.btn):hover{translate:4px 0}
+
+  /* Accordions fade open */
+  .faq details[open] .answer,.cl-more[open] .cl-prog{animation:answerIn .3s ease both}
+
+  /* Scroll-driven polish (Chrome, Edge, Safari 26+; other browsers simply skip it) */
+  @supports (animation-timeline:view()){
+    .heading .eyebrow{animation:wipeIn linear both;animation-timeline:view();animation-range:entry 5% entry 55%}
+    .heading h2,.heading>p{animation:riseIn linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+    .fx-card,.cl-card,.club-card,.role-card,.supporter,.partner,.dl-format,.vp-tip,.stat,.gm-tile,
+    .news-card,.post-card,.feature,.dl-steps li,.gv-way{
+      animation:riseIn linear both;animation-timeline:view();animation-range:entry 0% entry 55%;
+    }
+  }
+  @supports (animation-timeline:scroll()){
+    /* Thin reading-progress bar across the top of every page */
+    body::before{
+      content:"";position:fixed;top:0;left:0;right:0;height:3px;z-index:200;pointer-events:none;
+      background:linear-gradient(90deg,hsl(var(--brand)),hsl(var(--primary)),hsl(var(--clay)));
+      transform-origin:0 50%;animation:progressGrow linear both;animation-timeline:scroll(root);
+    }
+    body:has(.progress)::before{display:none}
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  nav.main a,nav.main button.nav-btn{transition:none}
+}
