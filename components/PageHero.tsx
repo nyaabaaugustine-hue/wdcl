@@ -11,6 +11,8 @@ type PageHeroProps = {
   image?: string;
   /** Use the green Wiamoase logo pattern as the background instead of a photo. */
   pattern?: boolean;
+  /** Which logo pattern to use when `pattern` is on. */
+  patternTone?: "green" | "cream";
   position?: string;
   priority?: boolean;
   children?: React.ReactNode;
@@ -22,12 +24,13 @@ export default function PageHero({
   lead,
   image,
   pattern = false,
+  patternTone = "green",
   position = "center 40%",
   priority = false,
   children,
 }: PageHeroProps) {
   return (
-    <section className={`page-hero ph-img${pattern ? " ph-pattern" : ""}`}>
+    <section className={`page-hero ph-img${pattern ? (patternTone === "cream" ? " ph-pattern ph-pattern-cream" : " ph-pattern") : ""}`}>
       {!pattern && image ? (
         <>
           <Image

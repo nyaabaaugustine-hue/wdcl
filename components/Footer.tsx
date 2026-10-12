@@ -48,6 +48,7 @@ export default function Footer() {
             <a href="/join">Join a club</a>
             <a href="/gallery">Gallery</a>
             <a href="/books">Digital library</a>
+            <a href="/membership">Membership</a>
             <a href="/faq">FAQ</a>
           </nav>
           <nav aria-label="Get involved">

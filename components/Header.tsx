@@ -226,8 +226,8 @@ export default function Header() {
           >
             <Icon name={dark ? "sun" : "moon"} size={18} />
           </button>
-          <Link href="/donate" className="btn btn-default btn-sm hide-m">
-            Support the centre
+          <Link href="/join" className="btn btn-default btn-sm hide-m">
+            Join a club
           </Link>
           <button
             ref={burgerRef}
@@ -285,8 +285,8 @@ export default function Header() {
             </Link>
           ),
         )}
-        <Link href="/donate" className="btn btn-default btn-join" onClick={() => setOpen(false)}>
-          Support the centre
+        <Link href="/join" className="btn btn-default btn-join" onClick={() => setOpen(false)}>
+          Join a club
         </Link>
       </div>
     </header>

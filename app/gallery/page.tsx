@@ -22,7 +22,8 @@ export default function GalleryPage() {
         }
         title="Inside the centre."
         lead="The reading room, the robotics bench, the clubs in session and the hall where the community meets."
-        image="https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791466702/vv_z2zakh.jpg"
+        pattern
+        patternTone="green"
         priority
       />
 

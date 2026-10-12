@@ -1967,15 +1967,16 @@ footer h2{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:u
    hero background, with a light veil so dark text stays easy to read.
    ========================================================================== */
 .page-hero.ph-pattern,.article-head{
+  background-color:hsl(var(--background));
   background-image:
-    linear-gradient(hsl(var(--background)/.76),hsl(var(--background)/.76)),
+    linear-gradient(hsl(var(--background)/.42),hsl(var(--background)/.42)),
     url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png");
   background-size:100% 100%,560px auto;
   background-position:0 0,center top;
   background-repeat:no-repeat,repeat;
 }
-.page-hero.ph-pattern h1{color:hsl(var(--foreground));text-shadow:none}
-.page-hero.ph-pattern .lead{color:hsl(var(--muted-foreground));text-shadow:none}
+.page-hero.ph-pattern h1{color:hsl(var(--foreground));text-shadow:0 0 22px hsl(var(--background)/.95),0 0 6px hsl(var(--background)/.9)}
+.page-hero.ph-pattern .lead{color:hsl(var(--foreground));text-shadow:0 0 16px hsl(var(--background)/.95),0 0 5px hsl(var(--background)/.9)}
 .page-hero.ph-pattern .eyebrow,.page-hero.ph-pattern .eyebrow a{color:hsl(var(--brand-ink))}
 .page-hero.ph-pattern .crumb-nav a{opacity:1}
 
@@ -1985,6 +1986,53 @@ footer h2{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:u
   background:
     linear-gradient(hsl(var(--background)/.8),hsl(var(--background)/.74)),
     url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791500504/wiamoase-logo-pattern-green_nujqfo.png") center top/560px auto repeat;
+}
+
+/* Gallery header: cream logo pattern. A light veil keeps it visible on the cream page;
+   in dark mode a stronger veil keeps the bright pattern from fighting the text. */
+.page-hero.ph-pattern-cream{
+  background-image:
+    linear-gradient(hsl(var(--background)/.35),hsl(var(--background)/.35)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png");
+}
+.dark .page-hero.ph-pattern-cream{
+  background-image:
+    linear-gradient(hsl(var(--background)/.88),hsl(var(--background)/.88)),
+    url("https://res.cloudinary.com/dwsl2ktt2/image/upload/v1791502992/wiamoase-logo-pattern-cream_spwegx.png");
+}
+
+/* ==========================================================================
+   Membership page
+   ========================================================================== */
+.mem-ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.mem-way{display:flex;flex-direction:column;gap:14px;padding:34px;border:1px solid hsl(var(--foreground)/.16);border-radius:8px;background:hsl(var(--card))}
+.mem-way .badge{align-self:flex-start}
+.mem-way h3{font-size:clamp(24px,2.6vw,30px);line-height:1.1;letter-spacing:-.025em;font-weight:500}
+.mem-way ul{list-style:none;display:grid;gap:10px;margin:6px 0 10px;padding:0}
+.mem-way li{display:flex;align-items:flex-start;gap:10px;font-size:15px}
+.mem-way li svg{flex:none;margin-top:4px;color:hsl(var(--brand-ink))}
+.mem-way .btn{align-self:flex-start;margin-top:auto}
+
+.mem-table{border-top:1px solid hsl(var(--foreground)/.8)}
+.mem-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) auto;gap:24px;align-items:center;padding:24px 4px;border-bottom:1px solid hsl(var(--border))}
+.mem-row h3{font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:2px}
+.mem-row p{margin:0;font-size:14.5px}
+.mem-value{font-size:15px}
+
+.mem-policies{display:grid;gap:12px;max-width:820px}
+.mem-policy{border:1px solid hsl(var(--foreground)/.16);border-radius:8px;background:hsl(var(--card));padding:0 22px}
+.mem-policy summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-weight:600;cursor:pointer;list-style:none}
+.mem-policy summary::-webkit-details-marker{display:none}
+.mem-policy summary::after{content:"+";flex:none;font-size:22px;font-weight:400;line-height:1;color:hsl(var(--muted-foreground));transition:rotate .2s}
+.mem-policy[open] summary::after{rotate:45deg}
+.mem-policy summary span:first-child{margin-right:auto}
+.mem-policy summary:focus-visible{outline:2px solid hsl(var(--ring));outline-offset:2px;border-radius:4px}
+.mem-policy p{margin:0 0 20px;font-size:15px}
+
+@media(max-width:900px){
+  .mem-ways{grid-template-columns:1fr}
+  .mem-way{padding:26px}
+  .mem-row{grid-template-columns:1fr;gap:10px;padding:20px 2px}
 }
 
 /* Honour forced-colors / high-contrast modes for custom pills and cards */

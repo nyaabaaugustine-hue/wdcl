@@ -237,3 +237,92 @@ body>footer .btn-default{background:hsl(var(--primary));color:hsl(var(--primary-
 @media(prefers-reduced-motion:reduce){
   nav.main a,nav.main button.nav-btn{transition:none}
 }
+
+
+/* ---------- Service-first homepage modules ---------- */
+.quick-actions{
+  padding:44px 0 0;
+  background:hsl(var(--background));
+}
+.quick-actions-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:28px;
+  margin-bottom:22px;
+}
+.quick-actions-head .eyebrow{margin-bottom:8px}
+.quick-actions-head h2{font-size:clamp(24px,3vw,34px);line-height:1.08;max-width:18ch}
+.quick-actions-note{font-size:14px;max-width:30ch;text-align:right}
+.quick-actions-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-block:1px solid hsl(var(--foreground)/.18);
+}
+.quick-action{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  min-height:112px;
+  padding:18px 18px;
+  border-right:1px solid hsl(var(--border));
+  transition:background .18s ease,color .18s ease;
+}
+.quick-action:last-child{border-right:0}
+.quick-action:hover{background:hsl(var(--brand-soft)/.55)}
+.quick-action>svg:last-child{margin-left:auto;flex:none;color:hsl(var(--brand-ink));transition:translate .2s ease}
+.quick-action:hover>svg:last-child{translate:3px 0}
+.quick-action-icon{
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:hsl(var(--brand-soft));
+  color:hsl(var(--brand-ink));
+}
+.quick-action-copy{display:flex;flex-direction:column;min-width:0}
+.quick-action-copy b{font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.quick-action-copy span{font-family:var(--font-serif),Georgia,serif;font-size:17px;line-height:1.2;margin-top:3px}
+.quick-action-copy small{font-size:12.5px;color:hsl(var(--muted-foreground));margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.upcoming{background:hsl(var(--surface-tint));border-block:1px solid hsl(var(--border))}
+.upcoming-head{display:flex;align-items:end;justify-content:space-between;gap:28px}
+.upcoming-head .heading{margin-bottom:0}
+.upcoming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.upcoming-card{display:flex;flex-direction:column;min-height:236px;padding:24px;border:1px solid hsl(var(--foreground)/.16);border-radius:8px;background:hsl(var(--card));transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.upcoming-card:hover{transform:translateY(-3px);border-color:hsl(var(--foreground)/.5);box-shadow:0 18px 36px -24px hsl(28 20% 20%/.35)}
+.upcoming-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:hsl(var(--brand-ink))}
+.upcoming-card h3{font-size:26px;margin:12px 0 4px}
+.upcoming-card>p{font-size:15px}
+.upcoming-meta{display:flex;flex-direction:column;gap:2px;margin:20px 0;color:hsl(var(--muted-foreground));font-size:13.5px}
+.upcoming-meta span:first-child{font-weight:600;color:hsl(var(--foreground))}
+.upcoming-card .read-more{margin-top:auto}
+
+@media(max-width:900px){
+  .quick-actions-grid{grid-template-columns:repeat(2,1fr)}
+  .quick-action:nth-child(2){border-right:0}
+  .quick-action:nth-child(-n+2){border-bottom:1px solid hsl(var(--border))}
+  .upcoming-grid{grid-template-columns:1fr}
+  .upcoming-card{min-height:0}
+}
+@media(max-width:520px){
+  .quick-actions{padding-top:28px}
+  .quick-actions-head{display:block}
+  .quick-actions-note{text-align:left;margin-top:10px}
+  .quick-actions-grid{display:block}
+  .quick-action{min-height:88px;border-right:0;border-bottom:1px solid hsl(var(--border))}
+  .quick-action:last-child{border-bottom:0}
+  .quick-action:nth-child(-n+2){border-bottom:1px solid hsl(var(--border))}
+  .upcoming-head{display:block}
+  .upcoming-head .btn{margin-top:8px}
+}
+
+/* Keep service content calm: reserve larger motion for the hero and direct interactions. */
+@media(prefers-reduced-motion:no-preference){
+  .upcoming-card,.quick-action{transition-duration:.18s}
+}
+@media(prefers-reduced-motion:reduce){
+  .upcoming-card,.quick-action{transition:none}
+}

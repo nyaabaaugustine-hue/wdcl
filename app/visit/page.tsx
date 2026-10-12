@@ -88,7 +88,7 @@ export default function VisitPage() {
         </div>
       </PageHero>
 
-      <section className="vp-facts" aria-label="Visit at a glance">
+      <section id="visit-facts" className="vp-facts" aria-label="Visit at a glance">
         <div className="container">
           <ul className="vp-facts-grid">
             {facts.map((f) => (
@@ -133,7 +133,7 @@ export default function VisitPage() {
               Google Maps, even where there is no street address.
             </p>
           </div>
-          <div className="vp-loc-grid">
+          <div id="visit-map" className="vp-loc-grid">
             <iframe
               className="vp-map"
               src={`${MAP_URL}&output=embed`}

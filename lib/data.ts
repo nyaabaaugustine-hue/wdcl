@@ -27,56 +27,44 @@ export type NavLink = {
 
 export const navLinks: NavLink[] = [
   {
-    label: "About",
+    label: "Visit",
     children: [
-      { label: "About us", href: "/about" },
-      { label: "Our story", href: "/#story" },
-      { label: "Facilities", href: "/#facilities" },
+      { label: "Plan a visit", href: "/visit" },
+      { label: "Get directions", href: "/visit#visit-map" },
+      { label: "Contact us", href: "/contact" },
       { label: "FAQ", href: "/faq" },
-      { label: "Our team", href: "/team" },
-      { label: "Impact", href: "/impact" },
     ],
   },
   {
     label: "Explore",
     children: [
-      { label: "Our Programs", href: "/programs" },
+      { label: "Facilities", href: "/#facilities" },
       { label: "Clubs", href: "/clubs" },
-      { label: "Join a club", href: "/join" },
-      { label: "Gallery", href: "/gallery" },
       { label: "Digital library", href: "/books" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Membership", href: "/membership" },
     ],
   },
   {
-    label: "Library",
+    label: "Programs",
     children: [
-      { label: "Services", href: "/services" },
-      { label: "Become a member", href: "/membership" },
-      { label: "Find a book", href: "/collection" },
-      { label: "Ask a librarian", href: "/ask" },
-      { label: "Events & timetable", href: "/events" },
-      { label: "Children & teens", href: "/kids" },
-      { label: "Policies", href: "/policies" },
+      { label: "All programs", href: "/programs" },
+      { label: "Join a club", href: "/join" },
+      { label: "Coding Club", href: "/clubs/coding" },
+      { label: "Robotics Club", href: "/clubs/robotics" },
+      { label: "Reading Club", href: "/clubs/reading" },
     ],
   },
   {
-    label: "Get involved",
+    label: "About",
     children: [
-      { label: "Sponsors", href: "/sponsors" },
+      { label: "About us", href: "/about" },
+      { label: "Our story", href: "/#story" },
       { label: "Partners", href: "/partners" },
-      { label: "Volunteer", href: "/volunteer" },
-      { label: "Support the centre", href: "/donate" },
-      { label: "Hire the hall", href: "/hire" },
+      { label: "Sponsors", href: "/sponsors" },
     ],
   },
   { href: "/news", label: "News" },
-  {
-    label: "Visit & contact",
-    children: [
-      { label: "Plan a visit", href: "/visit" },
-      { label: "Contact us", href: "/contact" },
-    ],
-  },
 ];
 
 /** Hero photograph of the centre — shared by the Visit page and the Contact backdrop. */

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import StatsBand from "@/components/StatsBand";
+import QuickActions from "@/components/QuickActions";
 import DirectorWelcome from "@/components/DirectorWelcome";
 import Overview from "@/components/Overview";
 import Story from "@/components/Story";
@@ -9,6 +10,7 @@ import Clubs from "@/components/Clubs";
 import FacilitiesCards from "@/components/FacilitiesCards";
 import ClubsCards from "@/components/ClubsCards";
 import HappeningNow from "@/components/HappeningNow";
+import UpcomingSessions from "@/components/UpcomingSessions";
 import Support from "@/components/Support";
 import Visit from "@/components/Visit";
 import DigitalLibrary from "@/components/DigitalLibrary";
@@ -40,6 +42,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <QuickActions />
+      <DigitalLibrary />
       <StatsBand />
       {MERGED_STORY ? (
         <OurStory />
@@ -61,7 +65,7 @@ export default function Home() {
           <Clubs />
         </>
       )}
-      <DigitalLibrary />
+      <UpcomingSessions />
       <HappeningNow />
       <Support showSmallActs />
       <Visit />

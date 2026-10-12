@@ -1,16 +1,25 @@
 /**
- * Everyday library facts that are NOT confirmed yet live here, in one place.
- * Fill a value in and every page that shows it updates; leave it empty and the
- * site shows a clear "to be confirmed" state instead of guessing.
+ * Everyday library facts live here, in one place.
+ *
+ * DEMO DATA: while `DEMO` is true, the opening hours, phone, email, events, extra team
+ * roles and the "demo" policies below are EXAMPLES so the pages can be previewed. They
+ * are labelled "Demo" on the site. Replace them with the library's confirmed details,
+ * then set `DEMO` to false.
  */
+export const DEMO = true;
+
 export const libraryInfo = {
-  /** e.g. [{ day: "Monday to Friday", time: "9:00 AM – 5:00 PM" }, { day: "Saturday", time: "10:00 AM – 2:00 PM" }] */
-  hours: null as { day: string; time: string }[] | null,
-  /** e.g. "+233 24 000 0000" */
-  phone: null as string | null,
-  /** e.g. "library@your-domain.org" */
-  email: null as string | null,
-  /** e.g. "https://wa.me/233240000000" */
+  /** DEMO hours. Replace with the real opening hours. */
+  hours: [
+    { day: "Monday to Friday", time: "9:00 AM – 5:00 PM" },
+    { day: "Saturday", time: "10:00 AM – 2:00 PM" },
+    { day: "Sunday", time: "Closed" },
+  ] as { day: string; time: string }[] | null,
+  /** DEMO number (not a working number). e.g. "+233 24 000 0000" once real. */
+  phone: "+233 00 000 0000" as string | null,
+  /** DEMO address (example.org is a reserved domain). e.g. "library@your-domain.org" once real. */
+  email: "hello@example.org" as string | null,
+  /** e.g. "https://wa.me/233240000000" once real. Left empty so no demo link opens WhatsApp. */
   whatsapp: null as string | null,
 };
 
@@ -23,12 +32,53 @@ export type LibEvent = {
   venue: string;
   text: string;
   href?: string;
+  /** true while the event is an example */
+  demo?: boolean;
 };
 
-/** Dated events. Add one here and it appears on /events (newest first is not required). */
-export const events: LibEvent[] = [];
+/** Dated events. Add one here and it appears on /events. These three are DEMO examples. */
+export const events: LibEvent[] = [
+  {
+    id: "family-saturday",
+    title: "Family Reading Saturday",
+    date: "2026-11-07",
+    time: "10:00 AM – 12:00 PM",
+    venue: "Library Reading Area",
+    text: "Read together with children, teens and grandparents, with stories in English and Twi.",
+    href: "/clubs/reading",
+    demo: true,
+  },
+  {
+    id: "open-day",
+    title: "Open day: meet the clubs",
+    date: "2026-11-21",
+    time: "9:00 AM – 1:00 PM",
+    venue: "Whole centre",
+    text: "Try coding, robotics and reading sessions, tour the labs and meet the library team.",
+    href: "/clubs",
+    demo: true,
+  },
+  {
+    id: "holiday-coding",
+    title: "Holiday coding camp",
+    date: "2026-12-12",
+    time: "9:30 AM – 1:30 PM",
+    venue: "ICT Lab",
+    text: "A one-day beginners' camp: build a first web page and a small game.",
+    href: "/clubs/coding",
+    demo: true,
+  },
+];
 
-export const team = [
+export type TeamMember = {
+  name: string;
+  role: string;
+  text: string;
+  /** true for placeholder roles still waiting for a real name */
+  demo?: boolean;
+};
+
+export const team: TeamMember[] = [
   {
     name: "Mr Stephen Adusei",
     role: "Library Director",
@@ -44,12 +94,31 @@ export const team = [
     role: "Chief of Wiamoase",
     text: "The paramount chief of Wiamoase, who has urged students and residents to make good use of the centre.",
   },
-] as const;
+  {
+    name: "Name to be added",
+    role: "Children's librarian",
+    text: "Looks after story circles and reading help for young readers.",
+    demo: true,
+  },
+  {
+    name: "Name to be added",
+    role: "ICT and robotics coordinator",
+    text: "Runs the labs and supports the Coding and Robotics clubs.",
+    demo: true,
+  },
+  {
+    name: "Name to be added",
+    role: "Volunteer coordinator",
+    text: "Welcomes volunteers and matches them to clubs and events.",
+    demo: true,
+  },
+];
 
 export type Policy = {
   title: string;
   text: string;
-  status: "published" | "tbc";
+  /** published = a real page exists; demo = example wording; tbc = not written yet */
+  status: "published" | "demo" | "tbc";
   href?: string;
   cta?: string;
 };
@@ -78,18 +147,18 @@ export const policies: Policy[] = [
   },
   {
     title: "Borrowing and loans",
-    text: "Who can borrow, how many books at a time, loan periods and late returns are being finalised.",
-    status: "tbc",
+    text: "Members may borrow up to 2 books for 14 days. Books can be renewed once if no one is waiting. A small fee applies for each late day.",
+    status: "demo",
   },
   {
     title: "Conduct in the library",
-    text: "A short, friendly code for readers, club members and visitors is being finalised.",
-    status: "tbc",
+    text: "Be kind, keep voices low in the reading area, look after the books and computers, and ask a team member if you need help.",
+    status: "demo",
   },
   {
     title: "Donating books and equipment",
-    text: "Guidelines on what the shelves and labs need most are being finalised. Please message us before you bring anything.",
-    status: "tbc",
+    text: "Please message us before you bring anything, so we can say what the shelves and labs need most.",
+    status: "demo",
     href: "/donate",
     cta: "Ways to support the centre",
   },

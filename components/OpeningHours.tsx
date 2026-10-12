@@ -1,16 +1,17 @@
 import Icon from "./Icon";
 import { FACEBOOK_URL } from "@/lib/data";
-import { libraryInfo } from "@/lib/library";
+import { DEMO, libraryInfo } from "@/lib/library";
 
 /**
- * Opening hours and contact card. Reads lib/library.ts: until real hours are filled in,
- * it says so plainly and points people to the message form.
+ * Opening hours and contact card. Reads lib/library.ts. While DEMO is on, the hours and contact
+ * details are labelled as examples; with no hours set it says so plainly.
  */
 export default function OpeningHours() {
   const { hours, phone, email, whatsapp } = libraryInfo;
   return (
     <div className="lx-hours">
       <p className="eyebrow">Opening hours</p>
+      {DEMO ? <span className="lx-chip tbc">Demo hours</span> : null}
       {hours && hours.length ? (
         <dl>
           {hours.map((h) => (
@@ -33,13 +34,25 @@ export default function OpeningHours() {
         {phone ? (
           <li>
             <Icon name="phone" size={16} />
-            <a href={`tel:${phone.replace(/\s+/g, "")}`}>{phone}</a>
+            {DEMO ? (
+              <span>
+                {phone} <span className="muted">(demo)</span>
+              </span>
+            ) : (
+              <a href={`tel:${phone.replace(/\s+/g, "")}`}>{phone}</a>
+            )}
           </li>
         ) : null}
         {email ? (
           <li>
             <Icon name="mail" size={16} />
-            <a href={`mailto:${email}`}>{email}</a>
+            {DEMO ? (
+              <span>
+                {email} <span className="muted">(demo)</span>
+              </span>
+            ) : (
+              <a href={`mailto:${email}`}>{email}</a>
+            )}
           </li>
         ) : null}
         {whatsapp ? (

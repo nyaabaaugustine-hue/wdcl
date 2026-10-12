@@ -12,18 +12,18 @@ export default function Hero() {
           <span className="dot" /> Robotics &amp; ICT Centre, powered by MTN Ghana Foundation →
         </a>
         <h1>
-          A library built by a town&apos;s <span>children abroad.</span>
+          A public library, ICT centre and community space in <span>Agona Wiamoase.</span>
         </h1>
         <p className="lead muted">
-          A branch of the Ghana Library Authority in Agona Wiamoase, Ashanti Region — a reading room,
-          a Robotics &amp; ICT Centre and a meeting hall, built by Wiamoase citizens abroad for the town&apos;s children.
+          Built by Wiamoase citizens abroad for the town&apos;s children: a reading room, a Robotics &amp; ICT
+          Centre and a meeting hall under one roof.
         </p>
         <div className="cta">
           <a href="/join" className="btn btn-default btn-lg">
             Join a club
           </a>
-          <a href="#visit" className="btn btn-outline btn-lg">
-            Visit us
+          <a href="/visit" className="btn btn-outline btn-lg">
+            Plan a visit
           </a>
         </div>
         <dl className="hero-facts">
